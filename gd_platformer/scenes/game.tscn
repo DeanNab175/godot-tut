@@ -178,6 +178,21 @@ sources/0 = SubResource("TileSetAtlasSource_hg7du")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cgepl"]
 
+[sub_resource type="Animation" id="Animation_caoyr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(91, -43)]
+}
+
 [sub_resource type="Animation" id="Animation_ayasr"]
 resource_name = "new_animation"
 length = 1.5
@@ -195,7 +210,13 @@ tracks/0/keys = {
 "values": [Vector2(91, -43), Vector2(91, 58)]
 }
 
-[sub_resource type="Animation" id="Animation_caoyr"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6iwrj"]
+_data = {
+"RESET": SubResource("Animation_caoyr"),
+"new_animation": SubResource("Animation_ayasr")
+}
+
+[sub_resource type="Animation" id="Animation_h1hn1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -207,13 +228,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(91, -43)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6iwrj"]
-_data = {
-"RESET": SubResource("Animation_caoyr"),
-"new_animation": SubResource("Animation_ayasr")
+"values": [Vector2(241, 85)]
 }
 
 [sub_resource type="Animation" id="Animation_ea700"]
@@ -231,21 +246,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(241, 85), Vector2(335, 85)]
-}
-
-[sub_resource type="Animation" id="Animation_h1hn1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(241, 85)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s5mb2"]
