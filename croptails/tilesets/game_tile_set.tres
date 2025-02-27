@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://rrossh1vo0d4"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://rrossh1vo0d4"]
 
 [ext_resource type="Texture2D" uid="uid://cw3ig7ym4unbp" path="res://assets/game/Tilesets/Water.png" id="1_ibgdw"]
 [ext_resource type="Texture2D" uid="uid://ct7nvebu8wvk1" path="res://assets/game/Tilesets/Grass.png" id="2_hngl7"]
 [ext_resource type="Texture2D" uid="uid://btadfds8a4qjr" path="res://assets/game/Tilesets/Tilled_Dirt_Wide.png" id="3_o5kty"]
 [ext_resource type="Texture2D" uid="uid://xwmtt0w4yyrt" path="res://assets/game/Objects/Basic_Grass_Biom_things.png" id="4_s4m63"]
+[ext_resource type="PackedScene" uid="uid://di3k0dpiixniq" path="res://scenes/houses/large_house.tscn" id="5_1ijoc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sfcky"]
 texture = ExtResource("1_ibgdw")
@@ -475,6 +476,9 @@ texture = ExtResource("4_s4m63")
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yr6kr"]
+scenes/1/scene = ExtResource("5_1ijoc")
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain"
@@ -485,3 +489,4 @@ sources/0 = SubResource("TileSetAtlasSource_sfcky")
 sources/1 = SubResource("TileSetAtlasSource_iu78u")
 sources/2 = SubResource("TileSetAtlasSource_jh631")
 sources/3 = SubResource("TileSetAtlasSource_se7eh")
+sources/5 = SubResource("TileSetScenesCollectionSource_yr6kr")
