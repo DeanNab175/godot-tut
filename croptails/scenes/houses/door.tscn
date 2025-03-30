@@ -89,7 +89,7 @@ animations = [{
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kc6sd"]
-size = Vector2(12, 30)
+size = Vector2(12, 36)
 
 [node name="Door" type="StaticBody2D"]
 script = ExtResource("1_cshgf")
