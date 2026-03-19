@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b6wrxm6fy2vjs"]
+
+[ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/interface/profile/stats.tscn" id="1_8fv2g"]
+[ext_resource type="Texture2D" uid="uid://d2biushrc7hnt" path="res://assets/icons/profile/star_256x256.png" id="2_4g2fj"]
+
+[node name="LevelStats" unique_id=1033858980 instance=ExtResource("1_8fv2g")]
+
+[node name="TextureRect" parent="Icon" parent_id_path=PackedInt32Array(1157283519) index="0" unique_id=1310159290]
+texture = ExtResource("2_4g2fj")
+
+[node name="TextFrame" parent="." index="1" unique_id=1155532627]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" parent="TextFrame" index="0" unique_id=1307428584]
+text = "Level: 1"

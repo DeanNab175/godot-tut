@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bic18q8iflcns"]
+
+[ext_resource type="Theme" uid="uid://b000lamwymr47" path="res://themes/button_options_theme.tres" id="1_o2s64"]
+[ext_resource type="Texture2D" uid="uid://dr4cditywx5f" path="res://assets/icons/game_options/new game.png" id="2_i7sxl"]
+
+[node name="OptionButton" type="Button" unique_id=995603270]
+anchors_preset = -1
+anchor_right = 0.104
+anchor_bottom = 0.062000003
+offset_right = 0.31999207
+offset_bottom = 0.039993286
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_o2s64")
+text = "New Game"
+icon = ExtResource("2_i7sxl")

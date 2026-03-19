@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dpm5gtfxow0hy"]
+
+[ext_resource type="Texture2D" uid="uid://c4y6tka01553g" path="res://assets/icons/profile/Profile_256x256.png" id="1_6udjm"]
+[ext_resource type="Texture2D" uid="uid://10qpbb8213iy" path="res://assets/icons/profile/coin_256x256.png" id="2_e631i"]
+[ext_resource type="FontFile" uid="uid://b6dqmhqvn7x82" path="res://assets/fonts/Jua-Regular.ttf" id="3_7cwr7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pq7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mpjb"]
+
+[node name="Profile" type="Control" unique_id=573860336]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=786471264]
+layout_mode = 1
+offset_right = 133.0
+offset_bottom = 60.0
+
+[node name="ProfileImage" type="PanelContainer" parent="HBoxContainer" unique_id=1501154708]
+custom_minimum_size = Vector2(98, 98)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1pq7g")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ProfileImage" unique_id=2011295840]
+layout_mode = 2
+texture = ExtResource("1_6udjm")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=961245783]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="UserStats" type="PanelContainer" parent="HBoxContainer" unique_id=338816877]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5mpjb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/UserStats" unique_id=858752565]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/UserStats/VBoxContainer" unique_id=650703608]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/UserStats/VBoxContainer/HBoxContainer" unique_id=672762439]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_e631i")
+expand_mode = 1
+
+[node name="5000" type="Label" parent="HBoxContainer/UserStats/VBoxContainer/HBoxContainer" unique_id=123825851]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2509804, 0.19215687, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("3_7cwr7")
+theme_override_font_sizes/font_size = 10
+text = "5000"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/UserStats/VBoxContainer" unique_id=1624667795]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/UserStats/VBoxContainer/HBoxContainer2" unique_id=1211336501]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="5000" type="Label" parent="HBoxContainer/UserStats/VBoxContainer/HBoxContainer2" unique_id=1430914613]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2509804, 0.19215687, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("3_7cwr7")
+theme_override_font_sizes/font_size = 10
+text = "5"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/UserStats/VBoxContainer" unique_id=82096602]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/UserStats/VBoxContainer/HBoxContainer3" unique_id=2098247194]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="5000" type="Label" parent="HBoxContainer/UserStats/VBoxContainer/HBoxContainer3" unique_id=705469418]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2509804, 0.19215687, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("3_7cwr7")
+theme_override_font_sizes/font_size = 10
+text = "Level: 1"
+vertical_alignment = 1

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://d3y330jbd8sey"]
+
+[ext_resource type="PackedScene" uid="uid://bbj3drjga1hig" path="res://scenes/player_info_ui.tscn" id="1_7vrkn"]
+[ext_resource type="Theme" uid="uid://jrw0moghhibg" path="res://themes/kavoon_label_theme.tres" id="2_fu7sn"]
+[ext_resource type="PackedScene" uid="uid://cp77u6m2ifcgi" path="res://scenes/interface/buy_coins/buy_coins.tscn" id="3_jix8l"]
+[ext_resource type="PackedScene" uid="uid://bic18q8iflcns" path="res://scenes/interface/options_button/option_button.tscn" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://cttf3t53lk0mb" path="res://assets/icons/game_options/settings.png" id="5_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://wykwjkkro0xg" path="res://assets/icons/game_options/friends.png" id="6_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://d0gyjlpgr64i1" path="res://assets/icons/game_options/help.png" id="7_0o4t1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glbon"]
+
+[node name="Game" type="Node2D" unique_id=1131247496]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=96111223]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1305585147]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=482516164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6392157, 0.5647059, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=1878865665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HeaderFrame" type="PanelContainer" parent="CanvasLayer/Control/MarginContainer" unique_id=92088286]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jix8l")
+
+[node name="ProfileFrame" type="PanelContainer" parent="CanvasLayer/Control/MarginContainer/HeaderFrame" unique_id=1913161632]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_glbon")
+
+[node name="Profile" parent="CanvasLayer/Control/MarginContainer/HeaderFrame/ProfileFrame" unique_id=26750104 instance=ExtResource("1_7vrkn")]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="CanvasLayer/Control/MarginContainer/HeaderFrame" unique_id=1606964695]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_fu7sn")
+theme_override_colors/font_color = Color(0.2509804, 0.19215687, 0.54901963, 1)
+theme_override_colors/font_outline_color = Color(0.9019608, 0.8862745, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 55
+text = "Slot Gather"
+
+[node name="BuyCoinsFrame" parent="CanvasLayer/Control/MarginContainer/HeaderFrame" unique_id=1047913136 instance=ExtResource("3_jix8l")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer" unique_id=872030147]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 60
+
+[node name="NewGame" parent="CanvasLayer/Control/MarginContainer/HBoxContainer" unique_id=995603270 instance=ExtResource("4_qe12f")]
+layout_mode = 2
+theme_override_constants/icon_max_width = 65
+
+[node name="Settings" parent="CanvasLayer/Control/MarginContainer/HBoxContainer" unique_id=388441396 instance=ExtResource("4_qe12f")]
+layout_mode = 2
+text = "Settings"
+icon = ExtResource("5_8qtwp")
+
+[node name="Friends" parent="CanvasLayer/Control/MarginContainer/HBoxContainer" unique_id=564784760 instance=ExtResource("4_qe12f")]
+layout_mode = 2
+text = "Friends"
+icon = ExtResource("6_dy7ct")
+
+[node name="Help" parent="CanvasLayer/Control/MarginContainer/HBoxContainer" unique_id=2102599588 instance=ExtResource("4_qe12f")]
+layout_mode = 2
+text = "Help"
+icon = ExtResource("7_0o4t1")

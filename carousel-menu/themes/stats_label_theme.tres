@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://4wbswqo18752"]
+
+[ext_resource type="FontFile" uid="uid://b6dqmhqvn7x82" path="res://assets/fonts/Jua-Regular.ttf" id="1_6i1i6"]
+
+[resource]
+Label/colors/font_color = Color(0.2509804, 0.19215687, 0.54901963, 1)
+Label/fonts/font = ExtResource("1_6i1i6")

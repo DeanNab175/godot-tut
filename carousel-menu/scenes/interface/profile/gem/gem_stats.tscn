@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ckubgbxcaaimg"]
+
+[ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/interface/profile/stats.tscn" id="1_csxyn"]
+[ext_resource type="Texture2D" uid="uid://c87i10s0bkvts" path="res://assets/icons/profile/diamond_256x256.png" id="2_1ty27"]
+
+[node name="GemStats" unique_id=1033858980 instance=ExtResource("1_csxyn")]
+
+[node name="TextureRect" parent="Icon" parent_id_path=PackedInt32Array(1157283519) index="0" unique_id=1310159290]
+texture = ExtResource("2_1ty27")
+
+[node name="Label" parent="TextFrame" parent_id_path=PackedInt32Array(1155532627) index="0" unique_id=1307428584]
+text = "5"

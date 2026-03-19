@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dyhfokjiype4s"]
+
+[ext_resource type="Texture2D" uid="uid://bxquvqd0sb0sx" path="res://assets/main_menu/title.png" id="1_yob4n"]
+[ext_resource type="Texture2D" uid="uid://w5wgv5ujle2c" path="res://assets/main_menu/label_continue.png" id="2_smlsy"]
+[ext_resource type="Texture2D" uid="uid://dgd5kdf063cjg" path="res://assets/main_menu/label_new_game.png" id="3_4w3up"]
+[ext_resource type="Texture2D" uid="uid://5khr27vhvhr6" path="res://assets/main_menu/label_options.png" id="4_tvx8y"]
+[ext_resource type="Texture2D" uid="uid://bcsnmnplg2oh3" path="res://assets/main_menu/version.png" id="5_clho1"]
+[ext_resource type="Texture2D" uid="uid://buxecbgbw0ma3" path="res://assets/main_menu/characters.png" id="6_pn0ko"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=1295888742]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=712493269]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1273855533]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=648788956]
+layout_mode = 2
+texture = ExtResource("1_yob4n")
+stretch_mode = 4
+
+[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1898363582]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Continue" type="TextureRect" parent="HBoxContainer/VBoxContainer/MenuOptions" unique_id=1909409999]
+layout_mode = 2
+texture = ExtResource("2_smlsy")
+stretch_mode = 4
+
+[node name="New Game" type="TextureRect" parent="HBoxContainer/VBoxContainer/MenuOptions" unique_id=1617317059]
+layout_mode = 2
+texture = ExtResource("3_4w3up")
+stretch_mode = 4
+
+[node name="Option" type="TextureRect" parent="HBoxContainer/VBoxContainer/MenuOptions" unique_id=1785892433]
+layout_mode = 2
+texture = ExtResource("4_tvx8y")
+stretch_mode = 4
+
+[node name="Version" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1395080922]
+layout_mode = 2
+texture = ExtResource("5_clho1")
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=666881455]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Character" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=2071476139]
+layout_mode = 2
+texture = ExtResource("6_pn0ko")

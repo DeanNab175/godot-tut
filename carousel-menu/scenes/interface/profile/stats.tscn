@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ds3ry5kmsp61w"]
+
+[ext_resource type="Texture2D" uid="uid://10qpbb8213iy" path="res://assets/icons/profile/coin_256x256.png" id="1_o2acq"]
+[ext_resource type="Theme" uid="uid://4wbswqo18752" path="res://themes/stats_label_theme.tres" id="2_a2ppl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vd2xb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxr27"]
+
+[node name="Stats" type="HBoxContainer" unique_id=1033858980]
+offset_right = 92.0
+offset_bottom = 40.0
+theme_override_constants/separation = 8
+
+[node name="Icon" type="PanelContainer" parent="." unique_id=1157283519]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vd2xb")
+
+[node name="TextureRect" type="TextureRect" parent="Icon" unique_id=1310159290]
+layout_mode = 2
+texture = ExtResource("1_o2acq")
+expand_mode = 1
+
+[node name="TextFrame" type="PanelContainer" parent="." unique_id=1155532627]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nxr27")
+
+[node name="Label" type="Label" parent="TextFrame" unique_id=1307428584]
+layout_mode = 2
+theme = ExtResource("2_a2ppl")
+theme_override_font_sizes/font_size = 18
+text = "5000"

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dlko6dpnk7hvd"]
+
+[ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/interface/profile/stats.tscn" id="1_xeche"]
+
+[node name="CoinStats" unique_id=1033858980 instance=ExtResource("1_xeche")]
