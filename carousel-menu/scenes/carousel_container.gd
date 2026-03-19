@@ -57,7 +57,8 @@ func _process(delta: float) -> void:
 				#i.mouse_filter = Control.MOUSE_FILTER_STOP
 				#i.focus_mode = Control.FOCUS_ALL
 			else:
-				i.z_index = -abs(i.get_index() - selected_index)
+				pass
+				#i.z_index = -abs(i.get_index() - selected_index)
 				#i.mouse_filter = Control.MOUSE_FILTER_IGNORE
 				#i.focus_mode = Control.FOCUS_NONE
 				

@@ -2,118 +2,299 @@
 
 [ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scenes/carousel_container.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://ht2o2ctyhu2m" path="res://scenes/game.gd" id="1_yqjtg"]
+[ext_resource type="Theme" uid="uid://4wbswqo18752" path="res://themes/stats_label_theme.tres" id="3_lnu2h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqjtg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbhrr"]
+bg_color = Color(0.98195416, 0.9789265, 0.98363394, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1975009195]
 script = ExtResource("1_yqjtg")
 
-[node name="CarouselContainer" type="Node2D" parent="." unique_id=739825449 node_paths=PackedStringArray("position_offset_node")]
-position = Vector2(600, 550)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1423143820]
+offset = Vector2(950, 500)
+transform = Transform2D(1, 0, 0, 1, 950, 500)
+
+[node name="CarouselContainer" type="Node2D" parent="CanvasLayer" unique_id=739825449 node_paths=PackedStringArray("position_offset_node")]
+unique_name_in_owner = true
 script = ExtResource("1_uwrxv")
-position_offset_node = NodePath("CanvasLayer/Control")
+position_offset_node = NodePath("Control")
 metadata/_custom_type_script = "uid://dy6jj7fm23i3h"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CarouselContainer" unique_id=1423143820]
-
-[node name="Control" type="Control" parent="CarouselContainer/CanvasLayer" unique_id=83822788]
+[node name="Control" type="Control" parent="CanvasLayer/CarouselContainer" unique_id=83822788]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -227.31775
-offset_right = -227.31775
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="Panel" type="Panel" parent="CarouselContainer/CanvasLayer/Control" unique_id=1946071131]
-modulate = Color(1, 1, 1, 0.99999994)
+[node name="Panel" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=1946071131]
 z_index = 1
-custom_minimum_size = Vector2(300, 400)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.22900002
-offset_left = 7.6786036
-offset_top = -202.99998
-offset_right = 7.2769775
-offset_bottom = 197.00002
-scale = Vector2(0.99999994, 0.99999994)
-pivot_offset = Vector2(219.6392, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 250)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 
-[node name="Panel2" type="Panel" parent="CarouselContainer/CanvasLayer/Control" unique_id=1922822742]
-modulate = Color(1, 1, 1, 0.65000004)
+[node name="Label" type="Label" parent="CanvasLayer/CarouselContainer/Control/Panel" unique_id=2073788714]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -11.5
+offset_right = 28.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Panel 1"
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=24241921]
+modulate = Color(1, 1, 1, 0.65)
 z_index = -1
-custom_minimum_size = Vector2(300, 400)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.22900002
-offset_left = 466.957
-offset_top = -200.0
-offset_right = 466.5557
-offset_bottom = 200.0
-scale = Vector2(0.75000006, 0.75000006)
-pivot_offset = Vector2(219.63936, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = -250.0
+offset_right = 620.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(200, 250)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 
-[node name="Panel3" type="Panel" parent="CarouselContainer/CanvasLayer/Control" unique_id=1371002905]
-modulate = Color(1, 1, 1, 0.30000004)
+[node name="Label" type="Label" parent="CanvasLayer/CarouselContainer/Control/Panel2" unique_id=1488968359]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -11.5
+offset_right = 28.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Panel 2"
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=280957445]
+modulate = Color(1, 1, 1, 0.3)
 z_index = -2
-custom_minimum_size = Vector2(300, 400)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.22900002
-offset_left = 926.2357
-offset_top = -200.0
-offset_right = 925.8336
-offset_bottom = 200.0
-scale = Vector2(0.50000006, 0.50000006)
-pivot_offset = Vector2(219.63898, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 640.0
+offset_top = -250.0
+offset_right = 1040.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(200, 250)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 
-[node name="Panel4" type="Panel" parent="CarouselContainer/CanvasLayer/Control" unique_id=1822930681]
-modulate = Color(1, 1, 1, 3e-45)
+[node name="Label" type="Label" parent="CanvasLayer/CarouselContainer/Control/Panel3" unique_id=917346328]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -11.5
+offset_right = 28.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Panel 3"
+
+[node name="Panel4" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=1552948984]
+modulate = Color(1, 1, 1, 4e-45)
 z_index = -3
-custom_minimum_size = Vector2(300, 400)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.22900002
-offset_left = 1385.5137
-offset_top = -200.0
-offset_right = 1385.112
-offset_bottom = 200.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1060.0
+offset_top = -250.0
+offset_right = 1460.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.25000003, 0.25000003)
-pivot_offset = Vector2(219.63922, 200)
+pivot_offset = Vector2(200, 250)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 
-[node name="Panel5" type="Panel" parent="CarouselContainer/CanvasLayer/Control" unique_id=1953434830]
-modulate = Color(1, 1, 1, 1e-45)
+[node name="Label" type="Label" parent="CanvasLayer/CarouselContainer/Control/Panel4" unique_id=2092313819]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -11.5
+offset_right = 28.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Panel 4"
+
+[node name="Panel5" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=1408193904]
+modulate = Color(1, 1, 1, 4e-45)
 z_index = -4
-custom_minimum_size = Vector2(300, 400)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.22900002
-offset_left = 1844.7921
-offset_top = -200.0
-offset_right = 1844.3898
-offset_bottom = 200.0
-scale = Vector2(0.10000001, 0.10000001)
-pivot_offset = Vector2(219.63885, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1480.0
+offset_top = -250.0
+offset_right = 1880.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.10000002, 0.10000002)
+pivot_offset = Vector2(200, 250)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 
-[node name="Panel6" type="Panel" parent="CarouselContainer/CanvasLayer/Control" unique_id=773617864]
-modulate = Color(1, 1, 1, 1e-45)
-z_index = -5
-custom_minimum_size = Vector2(300, 400)
+[node name="Label" type="Label" parent="CanvasLayer/CarouselContainer/Control/Panel5" unique_id=2101730110]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.22900002
-offset_left = 2304.0698
-offset_top = -200.0
-offset_right = 2303.6682
-offset_bottom = 200.0
-scale = Vector2(0.10000001, 0.10000001)
-pivot_offset = Vector2(219.63916, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -11.5
+offset_right = 28.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Panel 5"
+
+[node name="Panel6" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=485460480]
+modulate = Color(1, 1, 1, 4e-45)
+z_index = -5
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1900.0
+offset_top = -250.0
+offset_right = 2300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.10000002, 0.10000002)
+pivot_offset = Vector2(200, 250)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
+
+[node name="Label" type="Label" parent="CanvasLayer/CarouselContainer/Control/Panel6" unique_id=308876275]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -11.5
+offset_right = 28.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Panel 6"
+
+[node name="LeftButton" type="Button" parent="CanvasLayer" unique_id=1835331395]
+modulate = Color(1, 1, 1, 0.30000007)
+z_index = -2
+anchors_preset = -1
+anchor_left = -0.20300001
+anchor_top = 0.33200002
+anchor_right = -0.072000004
+anchor_bottom = 0.41200003
+offset_left = -60.23999
+offset_top = -30.560028
+offset_right = 189.73976
+offset_bottom = 61.289978
+grow_vertical = 0
+scale = Vector2(0.5000002, 0.5000002)
+pivot_offset = Vector2(120.5, 61.75)
+theme = ExtResource("3_lnu2h")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_lbhrr")
+text = "< Left"
+
+[node name="RightButton" type="Button" parent="CanvasLayer" unique_id=239943191]
+modulate = Color(1, 1, 1, 0.30000007)
+z_index = -2
+anchors_preset = -1
+anchor_left = 0.15900001
+anchor_top = 0.33
+anchor_right = 0.29000002
+anchor_bottom = 0.41200003
+offset_left = -60.28003
+offset_top = -31.400024
+offset_right = 189.6997
+offset_bottom = 58.289978
+grow_vertical = 0
+scale = Vector2(0.5000002, 0.5000002)
+pivot_offset = Vector2(120.5, 61.75)
+theme = ExtResource("3_lnu2h")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_lbhrr")
+text = "Right >"
+
+[connection signal="pressed" from="CanvasLayer/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RightButton" to="." method="_on_right_button_pressed"]

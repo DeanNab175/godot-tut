@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bbj3drjga1hig"]
 
+[ext_resource type="Script" uid="uid://whrxgysumu5l" path="res://scripts/player_profile/PlayerHUD.gd" id="1_c5s8f"]
 [ext_resource type="Texture2D" uid="uid://c4y6tka01553g" path="res://assets/icons/profile/Profile_256x256.png" id="1_o5bs3"]
 [ext_resource type="PackedScene" uid="uid://dlko6dpnk7hvd" path="res://scenes/interface/profile/coin/coin_stats.tscn" id="2_c5s8f"]
 [ext_resource type="PackedScene" uid="uid://ckubgbxcaaimg" path="res://scenes/interface/profile/gem/gem_stats.tscn" id="3_c0l4p"]
@@ -11,6 +12,7 @@
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 12
+script = ExtResource("1_c5s8f")
 
 [node name="AvatarFrame" type="PanelContainer" parent="." unique_id=1764147514]
 custom_minimum_size = Vector2(125, 100)

@@ -15,12 +15,29 @@ run/main_scene="uid://dg7fo2rakulc4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+StatsManager="*uid://brwcnqm4nhc6p"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "green",
+"res://scenes/": "red",
+"res://scripts/": "orange",
+"res://themes/": "purple"
+}
+
+[gui]
+
+common/snap_controls_to_pixels=false
 
 [physics]
 

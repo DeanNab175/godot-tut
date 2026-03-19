@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/interface/profile/stats.tscn" id="1_xeche"]
 
 [node name="CoinStats" unique_id=1033858980 instance=ExtResource("1_xeche")]
+
+[node name="Label" parent="TextFrame" parent_id_path=PackedInt32Array(1155532627) index="0" unique_id=1307428584]
+text = "0"
