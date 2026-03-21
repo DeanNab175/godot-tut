@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://6eacqhr03tc"]
+
+[ext_resource type="FontFile" uid="uid://baxwqk5pm6h2r" path="res://assets/fonts/Julee-Regular.ttf" id="1_6ln7y"]
+[ext_resource type="Script" uid="uid://v87ts8jofyix" path="res://scripts/room_card/room_card.gd" id="1_pplox"]
+[ext_resource type="FontFile" uid="uid://b6dqmhqvn7x82" path="res://assets/fonts/Jua-Regular.ttf" id="2_ifbda"]
+[ext_resource type="Texture2D" uid="uid://10qpbb8213iy" path="res://assets/icons/profile/coin_256x256.png" id="3_mdtt4"]
+[ext_resource type="Texture2D" uid="uid://dvxcy52e8rbke" path="res://assets/icons/lock.png" id="4_j7voa"]
+[ext_resource type="FontFile" uid="uid://daiamuplucr2d" path="res://assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf" id="4_mdtt4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crkok"]
+bg_color = Color(0.7411765, 0.6901961, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pplox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifbda"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
+bg_color = Color(0.5294118, 0.4392157, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8862745, 0.8627451, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pplox"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
+bg_color = Color(1, 0.7176471, 0.023529412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8862745, 0.8627451, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7voa"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
+bg_color = Color(0.4701814, 0.31422096, 0.99999326, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8862745, 0.8627451, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="RoomCard" type="Control" unique_id=414113130]
+custom_minimum_size = Vector2(500, 560)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -280.0
+offset_right = 250.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("1_pplox")
+
+[node name="Panel" type="Panel" parent="." unique_id=722192300]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 560.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_crkok")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1238780011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=151844482]
+layout_mode = 2
+
+[node name="RoomTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=394926789]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.63529414, 0.56078434, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.29803923)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_6ln7y")
+theme_override_font_sizes/font_size = 85
+text = "Room Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PrivateLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=69151206]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ifbda")
+theme_override_font_sizes/font_size = 32
+text = "Private Table"
+
+[node name="LockIcon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer" unique_id=1863394822]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+texture = ExtResource("4_j7voa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Space" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=450512904]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="BetRangeContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=615047882]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BetRangeLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/BetRangeContainer" unique_id=355691805]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ifbda")
+theme_override_font_sizes/font_size = 32
+text = "Bet Range"
+
+[node name="RangeContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/BetRangeContainer" unique_id=1771561749]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="Icon" type="Panel" parent="Panel/MarginContainer/VBoxContainer/BetRangeContainer/RangeContainer" unique_id=1265957173]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pplox")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/BetRangeContainer/RangeContainer/Icon" unique_id=916587836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mdtt4")
+expand_mode = 1
+
+[node name="RangeLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/BetRangeContainer/RangeContainer" unique_id=229444125]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ifbda")
+theme_override_font_sizes/font_size = 24
+text = "3,500 - 75,000"
+
+[node name="Space2" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1222697786]
+layout_mode = 2
+theme_override_constants/margin_top = 135
+
+[node name="CardFooterContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=163341302]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PlayButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/CardFooterContainer" unique_id=1187999229]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ifbda")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifbda")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pplox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7voa")
+text = "Play Now"
+
+[node name="TotalPlayerLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/CardFooterContainer" unique_id=1615723262]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mdtt4")
+theme_override_font_sizes/font_size = 18
+text = "1809 players"
