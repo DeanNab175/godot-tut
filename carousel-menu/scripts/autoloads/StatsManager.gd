@@ -7,7 +7,7 @@ signal gems_changed(new_amount: int)
 signal level_changed(new_level: int)
 signal xp_changed(new_xp: int)
 
-const default_coins: int = 5000
+const default_coins: int = 1000
 const default_gems: int = 5
 const default_level: int = 1
 const default_xp: int = 0
