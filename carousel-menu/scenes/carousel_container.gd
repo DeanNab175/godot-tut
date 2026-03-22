@@ -18,6 +18,14 @@ class_name CarouselContainer
 
 @export var position_offset_node: Control = null
 
+var can_go_left: bool:
+	get:
+		return selected_index > 0
+
+var can_go_right: bool:
+	get:
+		return position_offset_node != null and selected_index < position_offset_node.get_child_count() - 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -77,12 +85,24 @@ func _apply_visuals(i: Control, dist: int, delta: float) -> void:
 	var child_count = position_offset_node.get_child_count()
 	i.z_index = child_count - dist
 
+
 func _left():
-	selected_index -= 1
-	if selected_index < 0:
-		selected_index += 1
+	if can_go_left:
+		selected_index -= 1
 
 func _right():
-	selected_index += 1
-	if selected_index > position_offset_node.get_child_count() - 1:
-		selected_index -= 1
+	if can_go_right:
+		selected_index += 1
+
+# Usage example
+#$ArrowLeft.disabled = !$CarouselContainer.can_go_left
+#$ArrowRight.disabled = !$CarouselContainer.can_go_right
+#func _left():
+	#selected_index -= 1
+	#if selected_index < 0:
+		#selected_index += 1
+#
+#func _right():
+	#selected_index += 1
+	#if selected_index > position_offset_node.get_child_count() - 1:
+		#selected_index -= 1

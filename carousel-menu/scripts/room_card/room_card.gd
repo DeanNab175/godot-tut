@@ -7,16 +7,16 @@ extends Control
 @onready var play_button: Button = %CardFooterContainer/PlayButton
 @onready var total_player_label: Label = %CardFooterContainer/TotalPlayerLabel
 
-# --- Add these new nodes in your scene ---
-@onready var lock_icon: TextureRect = %LockIcon       # 🔒 add this
-@onready var private_label: Label = %PrivateLabel   # add this
+@onready var private_container = %PrivateContainer
+#@onready var lock_icon: TextureRect = %LockIcon
+@onready var private_label: Label = %PrivateLabel
 
 #@export var card_data: RoomCardData
 var _card_data: RoomCardData
 @export var card_data: RoomCardData :
 	set(value):
 		_card_data = value
-		if is_node_ready():   # ✅ only call setup if nodes exist
+		if is_node_ready(): # ✅ only call setup if nodes exist
 			setup(_card_data)
 
 signal play_pressed(card_data: RoomCardData)
@@ -39,8 +39,9 @@ func _setup_normal_card(data: RoomCardData) -> void:
 	# Show bet range + play button, hide lock UI
 	bet_range_container.visible = true
 	card_footer_container.visible = true
-	lock_icon.visible = false
-	private_label.visible = false
+	private_container.visible = false
+	#lock_icon.visible = false
+	#private_label.visible = false
 	modulate.a = 1.0  # fully visible
 
 	#range_label.text = "%s - %s" % [
@@ -63,8 +64,9 @@ func _setup_private_card(data: RoomCardData) -> void:
 	# Hide bet range + play button, show lock UI
 	bet_range_container.visible = false
 	card_footer_container.visible = false
-	lock_icon.visible = true
-	private_label.visible = true
+	private_container.visible = true
+	#lock_icon.visible = true
+	#private_label.visible = true
 	modulate.a = 0.6  # dimmed like in your screenshot
 
 	private_label.text = data.lock_label

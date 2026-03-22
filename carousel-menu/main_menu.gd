@@ -4,9 +4,18 @@ const RoomCard = preload("res://scenes/interface/room_card/room_card.tscn")
 
 # Point directly to the Control inside CarouselContainer
 @onready var cards_control: Control = %CarouselContainer/Control
+@onready var previous_btn: Button = $CanvasLayer/PreviousButton
+@onready var next_btn: Button = $CanvasLayer/NextButton
 
 func _ready() -> void:
+	previous_btn.pressed.connect(_on_previous_button_pressed)
+	next_btn.pressed.connect(_on_next_button_pressed)
 	_populate_cards()
+	_update_buttons()
+
+func _update_buttons() -> void:
+	previous_btn.disabled = !%CarouselContainer.can_go_left
+	next_btn.disabled = !%CarouselContainer.can_go_right
 
 func _populate_cards() -> void:
 	# 1. Remove all existing Panel nodes
@@ -57,10 +66,10 @@ func _on_play_pressed(data: RoomCardData) -> void:
 	print("Joining room: ", data.title)
 	# Load your game scene here
 
-
 func _on_previous_button_pressed() -> void:
 	%CarouselContainer._left()
-
+	_update_buttons()
 
 func _on_next_button_pressed() -> void:
 	%CarouselContainer._right()
+	_update_buttons()

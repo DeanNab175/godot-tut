@@ -105,6 +105,7 @@ layout_mode = 2
 
 [node name="RoomTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=394926789]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 0)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.63529414, 0.56078434, 1, 1)
@@ -117,9 +118,19 @@ theme_override_font_sizes/font_size = 85
 text = "Room Title"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 uppercase = true
 
-[node name="PrivateLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=69151206]
+[node name="TitleSpace" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=450512904]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="PrivateContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1181663450]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PrivateLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/PrivateContainer" unique_id=69151206]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -129,17 +140,12 @@ theme_override_fonts/font = ExtResource("2_ifbda")
 theme_override_font_sizes/font_size = 32
 text = "Private Table"
 
-[node name="LockIcon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer" unique_id=1863394822]
-unique_name_in_owner = true
+[node name="LockIcon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/PrivateContainer" unique_id=1863394822]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 texture = ExtResource("4_j7voa")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="Space" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=450512904]
-layout_mode = 2
-theme_override_constants/margin_top = 40
 
 [node name="BetRangeContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=615047882]
 unique_name_in_owner = true
