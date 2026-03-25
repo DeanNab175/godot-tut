@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://jrw0moghhibg"]
 
-[ext_resource type="FontFile" uid="uid://blkkp72f8c3bt" path="res://assets/fonts/Kavoon-Regular.ttf" id="1_q1v5q"]
+[ext_resource type="FontFile" uid="uid://lgj6ao4a4yn5" path="res://assets/fonts/LilitaOne-Regular.ttf" id="1_q1v5q"]
 
 [resource]
 Label/fonts/font = ExtResource("1_q1v5q")

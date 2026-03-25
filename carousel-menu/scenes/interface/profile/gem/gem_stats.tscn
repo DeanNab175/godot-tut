@@ -1,12 +1,44 @@
 [gd_scene format=3 uid="uid://ckubgbxcaaimg"]
 
 [ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/interface/profile/stats.tscn" id="1_csxyn"]
-[ext_resource type="Texture2D" uid="uid://c87i10s0bkvts" path="res://assets/icons/profile/diamond_256x256.png" id="2_1ty27"]
+[ext_resource type="Script" uid="uid://colqvy3tip6a6" path="res://scripts/ui/stats/gem_stats.gd" id="2_1ty27"]
+[ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="2_csxyn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ty27"]
+bg_color = Color(0, 0.7647059, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fda3h"]
+atlas = ExtResource("2_csxyn")
+region = Rect2(1104, 276, 256, 256)
 
 [node name="GemStats" unique_id=1033858980 instance=ExtResource("1_csxyn")]
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.7599983
+script = ExtResource("2_1ty27")
 
-[node name="TextureRect" parent="Icon" parent_id_path=PackedInt32Array(1157283519) index="0" unique_id=1310159290]
-texture = ExtResource("2_1ty27")
+[node name="PanelContainer" parent="." index="0" unique_id=1425949921]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 100.0
+offset_bottom = 15.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ty27")
 
-[node name="Label" parent="TextFrame" parent_id_path=PackedInt32Array(1155532627) index="0" unique_id=1307428584]
-text = "0"
+[node name="Icon" parent="PanelContainer/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1329512729) index="0" unique_id=1157283519]
+custom_minimum_size = Vector2(23, 23)
+
+[node name="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/Icon" index="0" unique_id=1310159290]
+texture = SubResource("AtlasTexture_fda3h")
+
+[node name="Label" parent="PanelContainer/MarginContainer/HBoxContainer/TextFrame" parent_id_path=PackedInt32Array(1155532627) index="0" unique_id=1307428584]
+text = "50"

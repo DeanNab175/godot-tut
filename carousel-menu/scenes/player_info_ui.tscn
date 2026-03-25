@@ -1,41 +1,73 @@
 [gd_scene format=3 uid="uid://bbj3drjga1hig"]
 
-[ext_resource type="Script" uid="uid://whrxgysumu5l" path="res://scripts/player_profile/PlayerHUD.gd" id="1_c5s8f"]
-[ext_resource type="Texture2D" uid="uid://c4y6tka01553g" path="res://assets/icons/profile/Profile_256x256.png" id="1_o5bs3"]
+[ext_resource type="Script" uid="uid://whrxgysumu5l" path="res://scripts/ui/player_profile/PlayerHUD.gd" id="1_c5s8f"]
+[ext_resource type="Texture2D" uid="uid://mibdmg1hvpgj" path="res://assets/game_images_sprites.png" id="2_c0l4p"]
 [ext_resource type="PackedScene" uid="uid://dlko6dpnk7hvd" path="res://scenes/interface/profile/coin/coin_stats.tscn" id="2_c5s8f"]
 [ext_resource type="PackedScene" uid="uid://ckubgbxcaaimg" path="res://scenes/interface/profile/gem/gem_stats.tscn" id="3_c0l4p"]
 [ext_resource type="PackedScene" uid="uid://b6wrxm6fy2vjs" path="res://scenes/interface/profile/level/level_stats.tscn" id="4_gw344"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5bs3"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw344"]
+atlas = ExtResource("2_c0l4p")
+region = Rect2(828, 0, 256, 256)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5s8f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c0l4p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gw344"]
+
 [node name="Profile" type="HBoxContainer" unique_id=26750104]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(420, 0)
+offset_right = 419.0
+offset_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 script = ExtResource("1_c5s8f")
 
 [node name="AvatarFrame" type="PanelContainer" parent="." unique_id=1764147514]
-custom_minimum_size = Vector2(125, 100)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o5bs3")
 
 [node name="TextureRect" type="TextureRect" parent="AvatarFrame" unique_id=1429189530]
 layout_mode = 2
-texture = ExtResource("1_o5bs3")
+texture = SubResource("AtlasTexture_gw344")
 expand_mode = 1
+stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=852594013]
+[node name="StatsContainer" type="HBoxContainer" parent="." unique_id=1657092552]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="CoinStatsFrame" type="PanelContainer" parent="StatsContainer" unique_id=905993120]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_c5s8f")
+
+[node name="CoinStats" parent="StatsContainer/CoinStatsFrame" unique_id=1033858980 instance=ExtResource("2_c5s8f")]
+layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="CoinStats" parent="VBoxContainer" unique_id=1033858980 instance=ExtResource("2_c5s8f")]
-custom_minimum_size = Vector2(0, 40)
+[node name="GemStatsFrame" type="PanelContainer" parent="StatsContainer" unique_id=13027898]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_c0l4p")
+
+[node name="GemStats" parent="StatsContainer/GemStatsFrame" unique_id=99062006 instance=ExtResource("3_c0l4p")]
 layout_mode = 2
 
-[node name="GemStats" parent="VBoxContainer" unique_id=99062006 instance=ExtResource("3_c0l4p")]
-custom_minimum_size = Vector2(0, 40)
+[node name="LevelStatsFrame" type="PanelContainer" parent="StatsContainer" unique_id=868874837]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gw344")
 
-[node name="LevelStats" parent="VBoxContainer" unique_id=432864843 instance=ExtResource("4_gw344")]
-custom_minimum_size = Vector2(0, 40)
+[node name="LevelStats" parent="StatsContainer/LevelStatsFrame" unique_id=432864843 instance=ExtResource("4_gw344")]
 layout_mode = 2
+size_flags_vertical = 4

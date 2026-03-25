@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cttf3t53lk0mb" path="res://assets/icons/game_options/settings.png" id="5_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://wykwjkkro0xg" path="res://assets/icons/game_options/friends.png" id="6_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://d0gyjlpgr64i1" path="res://assets/icons/game_options/help.png" id="7_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="10_0o4t1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
 
@@ -17,34 +18,106 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
-bg_color = Color(0.7411765, 0.6901961, 1, 1)
+bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o4t1"]
-bg_color = Color(0.7411765, 0.6901961, 1, 1)
+bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
-bg_color = Color(0.4763921, 0.33004513, 0.99999446, 1)
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.8745098, 0.7529412, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k4wn"]
-bg_color = Color(1, 0.7176471, 0.023529412, 1)
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(0.99999994, 0.6280784, 0.1381374, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5v2v"]
-bg_color = Color(0.41333973, 0.033016346, 0.9999967, 1)
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.7928742, 0.585763, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotk1"]
-bg_color = Color(0.56452096, 0.5365937, 0.74196255, 1)
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(0.6393682, 0.57475543, 0.56448966, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w44g7"]
+atlas = ExtResource("10_0o4t1")
+region = Rect2(1412, 299, 191, 212)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w44g7"]
-bg_color = Color(0.4763921, 0.33004513, 0.99999446, 1)
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.8745098, 0.7529412, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm266"]
-bg_color = Color(1, 0.7176471, 0.023529412, 1)
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(0.99999994, 0.6280784, 0.1381374, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8g3n"]
-bg_color = Color(0.41333973, 0.033016346, 0.9999967, 1)
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.7928742, 0.585763, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u0te"]
-bg_color = Color(0.56452096, 0.5365937, 0.74196255, 1)
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(0.6393682, 0.57475543, 0.56448966, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiatc"]
+atlas = ExtResource("10_0o4t1")
+region = Rect2(1412, 21, 191, 212)
 
 [node name="GameMainMenu" type="Node2D" unique_id=1131247496]
 script = ExtResource("1_dy7ct")
@@ -57,7 +130,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.6392157, 0.5647059, 1, 1)
+color = Color(1, 0.90588236, 0.8156863, 1)
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1305585147]
 layout_mode = 3
@@ -87,7 +160,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_jix8l")
 [node name="ProfileFrame" type="PanelContainer" parent="CanvasLayer/Control/MarginContainer/HeaderFrame" unique_id=1913161632]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_glbon")
 
 [node name="Profile" parent="CanvasLayer/Control/MarginContainer/HeaderFrame/ProfileFrame" unique_id=26750104 instance=ExtResource("1_7vrkn")]
@@ -97,11 +170,14 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_fu7sn")
-theme_override_colors/font_color = Color(0.2509804, 0.19215687, 0.54901963, 1)
-theme_override_colors/font_outline_color = Color(0.9019608, 0.8862745, 1, 1)
-theme_override_constants/outline_size = 13
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_shadow_color = Color(0.19607843, 0.19607843, 0.19607843, 0.18431373)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 4
 theme_override_font_sizes/font_size = 55
 text = "Slot Gather"
+uppercase = true
 
 [node name="BuyCoinsFrame" parent="CanvasLayer/Control/MarginContainer/HeaderFrame" unique_id=1047913136 instance=ExtResource("3_jix8l")]
 layout_mode = 2
@@ -273,17 +349,18 @@ icon = ExtResource("7_0o4t1")
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 34.0
-offset_top = -38.5
-offset_right = 202.0
-offset_bottom = 38.5
+offset_left = 82.0
+offset_top = -52.0
+offset_right = 192.0
+offset_bottom = 52.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_dy7ct")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0k4wn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j5v2v")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_iotk1")
-text = "< Previous"
+icon = SubResource("AtlasTexture_w44g7")
+expand_icon = true
 
 [node name="NextButton" type="Button" parent="CanvasLayer" unique_id=1673868385]
 anchors_preset = 6
@@ -292,14 +369,14 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -190.0
-offset_top = -38.5
-offset_right = -30.0
-offset_bottom = 38.5
+offset_top = -52.0
+offset_right = -80.0
+offset_bottom = 52.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_w44g7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cm266")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g8g3n")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8u0te")
-text = "Next >"
+icon = SubResource("AtlasTexture_oiatc")
+expand_icon = true

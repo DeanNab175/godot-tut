@@ -1,68 +1,69 @@
 [gd_scene format=3 uid="uid://6eacqhr03tc"]
 
-[ext_resource type="FontFile" uid="uid://baxwqk5pm6h2r" path="res://assets/fonts/Julee-Regular.ttf" id="1_6ln7y"]
-[ext_resource type="Script" uid="uid://v87ts8jofyix" path="res://scripts/room_card/room_card.gd" id="1_pplox"]
+[ext_resource type="Script" uid="uid://v87ts8jofyix" path="res://scripts/ui/room_card/room_card.gd" id="1_pplox"]
 [ext_resource type="FontFile" uid="uid://b6dqmhqvn7x82" path="res://assets/fonts/Jua-Regular.ttf" id="2_ifbda"]
-[ext_resource type="Texture2D" uid="uid://10qpbb8213iy" path="res://assets/icons/profile/coin_256x256.png" id="3_mdtt4"]
-[ext_resource type="Texture2D" uid="uid://dvxcy52e8rbke" path="res://assets/icons/lock.png" id="4_j7voa"]
+[ext_resource type="FontFile" uid="uid://lgj6ao4a4yn5" path="res://assets/fonts/LilitaOne-Regular.ttf" id="2_pplox"]
+[ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="4_j7voa"]
 [ext_resource type="FontFile" uid="uid://daiamuplucr2d" path="res://assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf" id="4_mdtt4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crkok"]
-bg_color = Color(0.7411765, 0.6901961, 1, 1)
+bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
 corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6bnr"]
+atlas = ExtResource("4_j7voa")
+region = Rect2(23, 290, 206, 228)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pplox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thd6k"]
+atlas = ExtResource("4_j7voa")
+region = Rect2(552, 0, 256, 256)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifbda"]
 content_margin_left = 25.0
 content_margin_top = 15.0
 content_margin_right = 25.0
 content_margin_bottom = 15.0
-bg_color = Color(0.5294118, 0.4392157, 1, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8862745, 0.8627451, 1, 1)
+bg_color = Color(1, 0.7176471, 0.011764706, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.16862746)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pplox"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p83d"]
 content_margin_left = 25.0
 content_margin_top = 15.0
 content_margin_right = 25.0
 content_margin_bottom = 15.0
-bg_color = Color(1, 0.7176471, 0.023529412, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8862745, 0.8627451, 1, 1)
+bg_color = Color(0.62352943, 0.9137255, 0, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.16862746)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7voa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjo46"]
 content_margin_left = 25.0
 content_margin_top = 15.0
 content_margin_right = 25.0
 content_margin_bottom = 15.0
-bg_color = Color(0.4701814, 0.31422096, 0.99999326, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8862745, 0.8627451, 1, 1)
+bg_color = Color(0.99999994, 0.81160927, 0.48809302, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.16862746)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
 
 [node name="RoomCard" type="Control" unique_id=414113130]
 custom_minimum_size = Vector2(500, 560)
@@ -108,13 +109,15 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(460, 0)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.63529414, 0.56078434, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.29803923)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_y = 10
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("1_6ln7y")
-theme_override_font_sizes/font_size = 85
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.18039216)
+theme_override_colors/font_outline_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_pplox")
+theme_override_font_sizes/font_size = 80
 text = "Room Title"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -135,7 +138,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 theme_override_fonts/font = ExtResource("2_ifbda")
 theme_override_font_sizes/font_size = 32
 text = "Private Table"
@@ -143,7 +146,7 @@ text = "Private Table"
 [node name="LockIcon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/PrivateContainer" unique_id=1863394822]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-texture = ExtResource("4_j7voa")
+texture = SubResource("AtlasTexture_o6bnr")
 expand_mode = 1
 stretch_mode = 5
 
@@ -156,7 +159,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 theme_override_fonts/font = ExtResource("2_ifbda")
 theme_override_font_sizes/font_size = 32
 text = "Bet Range"
@@ -180,13 +183,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_mdtt4")
+texture = SubResource("AtlasTexture_thd6k")
 expand_mode = 1
 
 [node name="RangeLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/BetRangeContainer/RangeContainer" unique_id=229444125]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 theme_override_fonts/font = ExtResource("2_ifbda")
 theme_override_font_sizes/font_size = 24
 text = "3,500 - 75,000"
@@ -204,18 +207,22 @@ theme_override_constants/separation = 16
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_focus_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_pressed_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_hover_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 theme_override_fonts/font = ExtResource("2_ifbda")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ifbda")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pplox")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j7voa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2p83d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tjo46")
 text = "Play Now"
 
 [node name="TotalPlayerLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/CardFooterContainer" unique_id=1615723262]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 theme_override_fonts/font = ExtResource("4_mdtt4")
 theme_override_font_sizes/font_size = 18
 text = "1809 players"

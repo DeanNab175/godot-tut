@@ -1,30 +1,55 @@
 [gd_scene format=3 uid="uid://cp77u6m2ifcgi"]
 
-[ext_resource type="Theme" uid="uid://jrw0moghhibg" path="res://themes/kavoon_label_theme.tres" id="1_hs4xo"]
-[ext_resource type="Texture2D" uid="uid://10qpbb8213iy" path="res://assets/icons/profile/coin_256x256.png" id="2_3jghg"]
+[ext_resource type="FontFile" uid="uid://lgj6ao4a4yn5" path="res://assets/fonts/LilitaOne-Regular.ttf" id="1_hs4xo"]
+[ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="2_3jghg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kg05x"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3xv7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jghg"]
-bg_color = Color(0.5294118, 0.4392157, 1, 0.47058824)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg05x"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.8039216, 0.34117648, 0.08235294, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs4xo"]
-bg_color = Color(0.5294118, 0.4392157, 1, 0.27450982)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9882353, 0.8235294, 0.15294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.54085505, 0.44394392, 0.0208487, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fi8yh"]
-bg_color = Color(0.5294118, 0.4392157, 1, 1)
-corner_radius_top_left = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jghg"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.99407977, 0.5204648, 0.30122164, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.8039216, 0.34117648, 0.08235294, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3xv7"]
+atlas = ExtResource("2_3jghg")
+region = Rect2(552, 0, 256, 256)
 
 [node name="BuyCoinsFrame" type="PanelContainer" unique_id=1047913136]
 offset_right = 40.0
@@ -32,55 +57,19 @@ offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_kg05x")
 
 [node name="Button" type="Button" parent="." unique_id=654926318]
-custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_r3xv7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3jghg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hs4xo")
-
-[node name="MarginContainer" type="MarginContainer" parent="Button" unique_id=814403967]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 15
-
-[node name="Panel" type="Panel" parent="Button/MarginContainer" unique_id=2116633254]
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fi8yh")
-
-[node name="Label" type="Label" parent="Button/MarginContainer/Panel" unique_id=172972676]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 21.0
-offset_right = 76.0
-grow_vertical = 2
-theme = ExtResource("1_hs4xo")
-theme_override_colors/font_color = Color(0.8352941, 0.8, 0.99607843, 1)
-theme_override_constants/line_spacing = 1
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_focus_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_pressed_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_hover_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_constants/h_separation = 10
+theme_override_constants/icon_max_width = 46
+theme_override_fonts/font = ExtResource("1_hs4xo")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_kg05x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hs4xo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3jghg")
 text = "Buy Coins"
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Button" unique_id=1411719506]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -88.0
-offset_top = 5.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("2_3jghg")
-expand_mode = 1
+icon = SubResource("AtlasTexture_r3xv7")
+alignment = 0
+icon_alignment = 2

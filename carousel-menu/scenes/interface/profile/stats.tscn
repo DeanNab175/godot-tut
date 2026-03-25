@@ -1,34 +1,73 @@
 [gd_scene format=3 uid="uid://ds3ry5kmsp61w"]
 
-[ext_resource type="Texture2D" uid="uid://10qpbb8213iy" path="res://assets/icons/profile/coin_256x256.png" id="1_o2acq"]
+[ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="1_o2acq"]
 [ext_resource type="Theme" uid="uid://4wbswqo18752" path="res://themes/stats_label_theme.tres" id="2_a2ppl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2acq"]
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vd2xb"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2ppl"]
+atlas = ExtResource("1_o2acq")
+region = Rect2(276, 276, 256, 256)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxr27"]
 
-[node name="Stats" type="HBoxContainer" unique_id=1033858980]
-offset_right = 92.0
-offset_bottom = 40.0
-theme_override_constants/separation = 8
+[node name="Stats" type="Control" unique_id=1766550479]
+layout_mode = 3
+anchor_top = 0.014
+anchor_bottom = 0.014
+offset_top = -15.120001
+offset_bottom = -15.120001
 
-[node name="Icon" type="PanelContainer" parent="." unique_id=1157283519]
-custom_minimum_size = Vector2(40, 30)
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1425949921]
+layout_mode = 1
+offset_right = 100.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o2acq")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=928735060]
 layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1329512729]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Icon" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1157283519]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vd2xb")
 
-[node name="TextureRect" type="TextureRect" parent="Icon" unique_id=1310159290]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/Icon" unique_id=1310159290]
 layout_mode = 2
-texture = ExtResource("1_o2acq")
-expand_mode = 1
+texture = SubResource("AtlasTexture_a2ppl")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="TextFrame" type="PanelContainer" parent="." unique_id=1155532627]
+[node name="TextFrame" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1155532627]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nxr27")
 
-[node name="Label" type="Label" parent="TextFrame" unique_id=1307428584]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/TextFrame" unique_id=1307428584]
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("2_a2ppl")
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_constants/line_spacing = 3
 theme_override_font_sizes/font_size = 18
 text = "5000"
+vertical_alignment = 1

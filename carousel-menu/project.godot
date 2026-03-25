@@ -14,6 +14,7 @@ config/name="Carousel menu"
 run/main_scene="uid://dg7fo2rakulc4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+run/snap_controls_to_pixels=true
 
 [autoload]
 
