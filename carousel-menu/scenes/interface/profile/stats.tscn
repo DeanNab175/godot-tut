@@ -19,24 +19,28 @@ region = Rect2(276, 276, 256, 256)
 
 [node name="Stats" type="Control" unique_id=1766550479]
 layout_mode = 3
-anchor_top = 0.014
-anchor_bottom = 0.014
-offset_top = -15.120001
-offset_bottom = -15.120001
+anchors_preset = 0
+size_flags_horizontal = 2
+size_flags_vertical = 4
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1425949921]
 layout_mode = 1
-offset_right = 100.0
-offset_bottom = 31.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 115.0
+offset_bottom = 20.0
+grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_o2acq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=928735060]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1329512729]
 layout_mode = 2

@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cp77u6m2ifcgi" path="res://scenes/interface/buy_coins/buy_coins.tscn" id="3_jix8l"]
 [ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scenes/carousel_container.gd" id="4_8qtwp"]
 [ext_resource type="PackedScene" uid="uid://bic18q8iflcns" path="res://scenes/interface/options_button/option_button.tscn" id="4_qe12f"]
-[ext_resource type="Texture2D" uid="uid://cttf3t53lk0mb" path="res://assets/icons/game_options/settings.png" id="5_8qtwp"]
-[ext_resource type="Texture2D" uid="uid://wykwjkkro0xg" path="res://assets/icons/game_options/friends.png" id="6_dy7ct"]
-[ext_resource type="Texture2D" uid="uid://d0gyjlpgr64i1" path="res://assets/icons/game_options/help.png" id="7_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="10_0o4t1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
@@ -22,6 +19,22 @@ bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o4t1"]
 bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe12f"]
+atlas = ExtResource("10_0o4t1")
+region = Rect2(824, 280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qtwp"]
+atlas = ExtResource("10_0o4t1")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy7ct"]
+atlas = ExtResource("10_0o4t1")
+region = Rect2(276, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o4t1"]
+atlas = ExtResource("10_0o4t1")
+region = Rect2(1672, 21, 226, 217)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
 content_margin_left = 24.0
@@ -164,6 +177,7 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_glbon")
 
 [node name="Profile" parent="CanvasLayer/Control/MarginContainer/HeaderFrame/ProfileFrame" unique_id=26750104 instance=ExtResource("1_7vrkn")]
+custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 
 [node name="GameTitle" type="Label" parent="CanvasLayer/Control/MarginContainer/HeaderFrame" unique_id=1606964695]
@@ -324,7 +338,7 @@ text = "Panel 3"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_constants/separation = 60
+theme_override_constants/separation = 35
 
 [node name="NewGame" parent="CanvasLayer/Control/MarginContainer/FooterContainer" unique_id=995603270 instance=ExtResource("4_qe12f")]
 layout_mode = 2
@@ -333,17 +347,22 @@ theme_override_constants/icon_max_width = 65
 [node name="Settings" parent="CanvasLayer/Control/MarginContainer/FooterContainer" unique_id=388441396 instance=ExtResource("4_qe12f")]
 layout_mode = 2
 text = "Settings"
-icon = ExtResource("5_8qtwp")
+icon = SubResource("AtlasTexture_qe12f")
 
 [node name="Friends" parent="CanvasLayer/Control/MarginContainer/FooterContainer" unique_id=564784760 instance=ExtResource("4_qe12f")]
 layout_mode = 2
 text = "Friends"
-icon = ExtResource("6_dy7ct")
+icon = SubResource("AtlasTexture_8qtwp")
 
 [node name="Help" parent="CanvasLayer/Control/MarginContainer/FooterContainer" unique_id=2102599588 instance=ExtResource("4_qe12f")]
 layout_mode = 2
 text = "Help"
-icon = ExtResource("7_0o4t1")
+icon = SubResource("AtlasTexture_dy7ct")
+
+[node name="Exit" parent="CanvasLayer/Control/MarginContainer/FooterContainer" unique_id=533559334 instance=ExtResource("4_qe12f")]
+layout_mode = 2
+text = "Exit"
+icon = SubResource("AtlasTexture_0o4t1")
 
 [node name="PreviousButton" type="Button" parent="CanvasLayer" unique_id=811687447]
 anchors_preset = 4

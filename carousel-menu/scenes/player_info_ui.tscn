@@ -20,7 +20,7 @@ region = Rect2(828, 0, 256, 256)
 
 [node name="Profile" type="HBoxContainer" unique_id=26750104]
 custom_minimum_size = Vector2(420, 0)
-offset_right = 419.0
+offset_right = 436.0
 offset_bottom = 70.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -43,7 +43,6 @@ stretch_mode = 4
 [node name="StatsContainer" type="HBoxContainer" parent="." unique_id=1657092552]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 8
 
 [node name="CoinStatsFrame" type="PanelContainer" parent="StatsContainer" unique_id=905993120]
 layout_mode = 2
@@ -62,6 +61,8 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_c0l4p")
 
 [node name="GemStats" parent="StatsContainer/GemStatsFrame" unique_id=99062006 instance=ExtResource("3_c0l4p")]
 layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
 [node name="LevelStatsFrame" type="PanelContainer" parent="StatsContainer" unique_id=868874837]
 layout_mode = 2

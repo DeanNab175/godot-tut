@@ -11,22 +11,15 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [node name="CoinStats" unique_id=1033858980 instance=ExtResource("1_xeche")]
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_top = 0.0
-offset_right = 0.0
+offset_right = 115.0
 offset_bottom = 31.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 script = ExtResource("2_mcrvq")
 
 [node name="PanelContainer" parent="." index="0" unique_id=1425949921]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -15.5
-offset_right = 100.0
-offset_bottom = 15.5
-grow_vertical = 2
+offset_top = -24.5
+offset_bottom = 24.5
 theme_override_styles/panel = SubResource("StyleBoxFlat_gsbsn")
 
 [node name="Label" parent="PanelContainer/MarginContainer/HBoxContainer/TextFrame" parent_id_path=PackedInt32Array(1155532627) index="0" unique_id=1307428584]

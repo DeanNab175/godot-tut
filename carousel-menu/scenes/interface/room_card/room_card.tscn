@@ -4,7 +4,6 @@
 [ext_resource type="FontFile" uid="uid://b6dqmhqvn7x82" path="res://assets/fonts/Jua-Regular.ttf" id="2_ifbda"]
 [ext_resource type="FontFile" uid="uid://lgj6ao4a4yn5" path="res://assets/fonts/LilitaOne-Regular.ttf" id="2_pplox"]
 [ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="4_j7voa"]
-[ext_resource type="FontFile" uid="uid://daiamuplucr2d" path="res://assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf" id="4_mdtt4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crkok"]
 bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
@@ -223,6 +222,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
-theme_override_fonts/font = ExtResource("4_mdtt4")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("2_ifbda")
+theme_override_font_sizes/font_size = 20
 text = "1809 players"
