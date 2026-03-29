@@ -4,18 +4,32 @@ const RoomCard = preload("res://scenes/interface/room_card/room_card.tscn")
 
 # Point directly to the Control inside CarouselContainer
 @onready var cards_control: Control = %CarouselContainer/Control
-@onready var previous_btn: Button = $CanvasLayer/PreviousButton
-@onready var next_btn: Button = $CanvasLayer/NextButton
+@onready var previous_button: Button = $CanvasLayer/MainControl/PreviousButton
+@onready var next_button: Button = $CanvasLayer/MainControl/NextButton
+@onready var exit_button: Button = $CanvasLayer/MainControl/MarginContainer/FooterContainer/ExitButton
+@onready var settings_button: Button = $CanvasLayer/MainControl/MarginContainer/FooterContainer/SettingsButton
+@onready var settings_back_button: Button = $CanvasLayer/SettingsContainer/VBoxContainer/SettingsHeaderContainer/MarginContainer/SettingsBackButton
+
+
+@onready var main_control: Control = $CanvasLayer/MainControl
+@onready var settings_container: PanelContainer = $CanvasLayer/SettingsContainer
+
+
 
 func _ready() -> void:
-	previous_btn.pressed.connect(_on_previous_button_pressed)
-	next_btn.pressed.connect(_on_next_button_pressed)
+	previous_button.pressed.connect(_on_previous_button_pressed)
+	next_button.pressed.connect(_on_next_button_pressed)
+	settings_button.pressed.connect(_on_settings_button_pressed)
+	exit_button.pressed.connect(_on_exit_button_pressed)
+	settings_back_button.pressed.connect(_on_settings_back_button_pressed)
+	main_control.visible = true
+	settings_container.visible = false
 	_populate_cards()
 	_update_buttons()
 
 func _update_buttons() -> void:
-	previous_btn.disabled = !%CarouselContainer.can_go_left
-	next_btn.disabled = !%CarouselContainer.can_go_right
+	previous_button.disabled = !%CarouselContainer.can_go_left
+	next_button.disabled = !%CarouselContainer.can_go_right
 
 func _populate_cards() -> void:
 	# 1. Remove all existing Panel nodes
@@ -73,3 +87,14 @@ func _on_previous_button_pressed() -> void:
 func _on_next_button_pressed() -> void:
 	%CarouselContainer._right()
 	_update_buttons()
+
+func _on_settings_button_pressed() -> void:
+	main_control.visible = false
+	settings_container.visible = true
+	
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
+	
+func _on_settings_back_button_pressed() -> void:
+	main_control.visible = true
+	settings_container.visible = false
