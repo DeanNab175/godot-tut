@@ -2,6 +2,8 @@
 extends Node2D
 class_name CarouselContainer
 
+signal index_changed
+
 @export var spacing: float = 20.0
 
 @export var wraparound_enabled: bool = false
@@ -18,6 +20,14 @@ class_name CarouselContainer
 
 @export var position_offset_node: Control = null
 
+@export var swipe_threshold: float = 50.0
+
+var _touch_start: Vector2 = Vector2.ZERO
+var _is_touching: bool = false
+var _drag_offset: float = 0.0
+var _is_dragging: bool = false
+var _visual_offset_x: float = 0.0
+
 var can_go_left: bool:
 	get:
 		return selected_index > 0
@@ -31,7 +41,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !position_offset_node or position_offset_node.get_child_count() == 0:
 		return
@@ -44,10 +53,17 @@ func _process(delta: float) -> void:
 			_process_linear(i, delta)
 	
 	if wraparound_enabled:
-		position_offset_node.position.x = lerp(position_offset_node.position.x, 0.0, smoothing_speed * delta)
+		_visual_offset_x = lerp(_visual_offset_x, 0.0, smoothing_speed * delta)
 	else:
 		var selected = position_offset_node.get_child(selected_index)
-		position_offset_node.position.x = lerp(position_offset_node.position.x, -(selected.position.x + selected.size.x / 2.0), smoothing_speed * delta)
+		var target_x = -(selected.position.x + selected.size.x / 2.0)
+		
+		if _is_dragging:
+			_visual_offset_x = target_x + _drag_offset
+		else:
+			_visual_offset_x = lerp(_visual_offset_x, target_x, smoothing_speed * delta)
+			
+	position_offset_node.position.x = _visual_offset_x
 
 func _process_wraparound(i: Control, delta: float) -> void:
 	var child_count = position_offset_node.get_child_count()
@@ -89,10 +105,39 @@ func _apply_visuals(i: Control, dist: int, delta: float) -> void:
 func _left():
 	if can_go_left:
 		selected_index -= 1
+		emit_signal("index_changed")
 
 func _right():
 	if can_go_right:
 		selected_index += 1
+		emit_signal("index_changed")
+		
+func _input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			_touch_start = event.position
+			_is_touching = true
+			_is_dragging = true
+		else:
+			_is_touching = false
+			_is_dragging = false
+			_snap_to_nearest()
+
+	elif event is InputEventScreenDrag and _is_touching:
+		var swipe_delta = event.position.x - _touch_start.x
+		_drag_offset = swipe_delta
+
+func _snap_to_nearest() -> void:
+	if !position_offset_node:
+		return
+	var card_width = position_offset_node.get_child(0).size.x + spacing
+	var snapped_index = selected_index - round(_drag_offset / card_width)
+	snapped_index = clamp(snapped_index, 0, position_offset_node.get_child_count() - 1)
+	if snapped_index != selected_index:
+		selected_index = snapped_index
+		emit_signal("index_changed")
+	_drag_offset = 0.0
+
 
 # Usage example
 #$ArrowLeft.disabled = !$CarouselContainer.can_go_left

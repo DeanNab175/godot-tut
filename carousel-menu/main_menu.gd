@@ -3,6 +3,7 @@ extends Node2D
 const RoomCard = preload("res://scenes/interface/room_card/room_card.tscn")
 
 # Point directly to the Control inside CarouselContainer
+@onready var carousel_container: CarouselContainer = %CarouselContainer
 @onready var cards_control: Control = %CarouselContainer/Control
 @onready var previous_button: Button = $CanvasLayer/MainControl/PreviousButton
 @onready var next_button: Button = $CanvasLayer/MainControl/NextButton
@@ -10,13 +11,11 @@ const RoomCard = preload("res://scenes/interface/room_card/room_card.tscn")
 @onready var settings_button: Button = $CanvasLayer/MainControl/MarginContainer/FooterContainer/SettingsButton
 @onready var settings_back_button: Button = $CanvasLayer/SettingsContainer/VBoxContainer/SettingsHeaderContainer/MarginContainer/SettingsBackButton
 
-
 @onready var main_control: Control = $CanvasLayer/MainControl
 @onready var settings_container: PanelContainer = $CanvasLayer/SettingsContainer
 
-
-
 func _ready() -> void:
+	_populate_cards()
 	previous_button.pressed.connect(_on_previous_button_pressed)
 	next_button.pressed.connect(_on_next_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
@@ -24,12 +23,12 @@ func _ready() -> void:
 	settings_back_button.pressed.connect(_on_settings_back_button_pressed)
 	main_control.visible = true
 	settings_container.visible = false
-	_populate_cards()
+	carousel_container.index_changed.connect(_update_buttons)
 	_update_buttons()
 
 func _update_buttons() -> void:
-	previous_button.disabled = !%CarouselContainer.can_go_left
-	next_button.disabled = !%CarouselContainer.can_go_right
+	previous_button.disabled = !carousel_container.can_go_left
+	next_button.disabled = !carousel_container.can_go_right
 
 func _populate_cards() -> void:
 	# 1. Remove all existing Panel nodes
@@ -37,43 +36,45 @@ func _populate_cards() -> void:
 		child.queue_free()
 
 	# 2. Define your room data
-	var rooms: Array[RoomCardData] = [
-		_make_private_card(),
-		_make_shark_card(),
-		_make_joker_card(),
+	var rooms_data: Array = [
+		{
+			"card_type": RoomCardData.CardType.PRIVATE,
+			"title": "Play with Friends",
+			"lock_label": "Private Table",
+			"is_locked": true
+		},
+		{
+			"card_type": RoomCardData.CardType.NORMAL,
+			"title": "SHARK",
+			"bet_min": 3500,
+			"bet_max": 75000,
+			"total_players": 1809
+		},
+		{
+			"card_type": RoomCardData.CardType.NORMAL,
+			"title": "Joker",
+			"bet_min": 15000,
+			"bet_max": 500_000_000,
+			"total_players": 509
+		}
 	]
 
 	# 3. Instantiate and add each RoomCard
-	for data in rooms:
+	for data in rooms_data:
 		var card = RoomCard.instantiate()
 		cards_control.add_child(card)
-		card.setup(data)
+		card.setup(_make_card(data))
 		card.play_pressed.connect(_on_play_pressed)
-
-func _make_private_card() -> RoomCardData:
+		
+func _make_card(data: Dictionary) -> RoomCardData:
 	var d = RoomCardData.new()
-	d.card_type = RoomCardData.CardType.PRIVATE
-	d.title = "Play with Friends"
-	d.lock_label = "Private Table"
-	d.is_locked = true
-	return d
-
-func _make_shark_card() -> RoomCardData:
-	var d = RoomCardData.new()
-	d.card_type = RoomCardData.CardType.NORMAL
-	d.title = "SHARK"
-	d.bet_min = 3500
-	d.bet_max = 75000
-	d.total_players = 1809
-	return d
-
-func _make_joker_card() -> RoomCardData:
-	var d = RoomCardData.new()
-	d.card_type = RoomCardData.CardType.NORMAL
-	d.title = "Joker"
-	d.bet_min = 15000
-	d.bet_max = 500_000_000
-	d.total_players = 1809
+	d.card_type = data.get("card_type", RoomCardData.CardType.NORMAL)
+	d.title      = data.get("title", "")
+	d.is_locked  = data.get("is_locked", false)
+	d.lock_label = data.get("lock_label", "")
+	d.bet_min    = data.get("bet_min", 0)
+	d.bet_max    = data.get("bet_max", 0)
+	d.total_players = data.get("total_players", 0)
 	return d
 
 func _on_play_pressed(data: RoomCardData) -> void:
@@ -81,11 +82,11 @@ func _on_play_pressed(data: RoomCardData) -> void:
 	# Load your game scene here
 
 func _on_previous_button_pressed() -> void:
-	%CarouselContainer._left()
+	carousel_container._left()
 	_update_buttons()
 
 func _on_next_button_pressed() -> void:
-	%CarouselContainer._right()
+	carousel_container._right()
 	_update_buttons()
 
 func _on_settings_button_pressed() -> void:

@@ -5,10 +5,10 @@
 [sub_resource type="ImageTexture" id="ImageTexture_146v5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_146v5"]
-content_margin_left = 30.0
-content_margin_top = 16.0
-content_margin_right = 30.0
-content_margin_bottom = 16.0
+content_margin_left = 25.0
+content_margin_top = 10.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
 bg_color = Color(1, 0.79607844, 0.59607846, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -16,10 +16,10 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1c6xt"]
-content_margin_left = 30.0
-content_margin_top = 16.0
-content_margin_right = 30.0
-content_margin_bottom = 16.0
+content_margin_left = 25.0
+content_margin_top = 10.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
 bg_color = Color(1, 0.8745098, 0.7529412, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -27,10 +27,10 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hqss"]
-content_margin_left = 30.0
-content_margin_top = 16.0
-content_margin_right = 30.0
-content_margin_bottom = 16.0
+content_margin_left = 25.0
+content_margin_top = 10.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
 bg_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -42,9 +42,9 @@ Button/colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 Button/colors/font_hover_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 Button/colors/font_outline_color = Color(0.9150545, 0.9165422, 0.98810154, 1)
 Button/colors/font_pressed_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
-Button/constants/h_separation = 18
-Button/constants/icon_max_width = 50
-Button/font_sizes/font_size = 34
+Button/constants/h_separation = 20
+Button/constants/icon_max_width = 35
+Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("1_146v5")
 Button/icons/icon = SubResource("ImageTexture_146v5")
 Button/styles/hover = SubResource("StyleBoxFlat_146v5")

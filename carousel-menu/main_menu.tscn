@@ -167,7 +167,6 @@ color = Color(1, 0.90588236, 0.8156863, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=206446725]
 stream = ExtResource("9_dy7ct")
-autoplay = true
 bus = &"Music"
 
 [node name="MainControl" type="Control" parent="CanvasLayer" unique_id=1305585147]
@@ -237,6 +236,7 @@ wraparound_height = 10.0
 selected_index = 1
 follow_button_focus = true
 position_offset_node = NodePath("Control")
+swipe_threshold = 100.0
 metadata/_custom_type_script = "uid://dy6jj7fm23i3h"
 
 [node name="Control" type="Control" parent="CanvasLayer/MainControl/MarginContainer/CarouselFrame/CarouselContainer" unique_id=2133488175]
@@ -367,7 +367,6 @@ theme_override_constants/separation = 35
 
 [node name="NewGameButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=995603270 instance=ExtResource("4_qe12f")]
 layout_mode = 2
-theme_override_constants/icon_max_width = 65
 
 [node name="SettingsButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=388441396 instance=ExtResource("4_qe12f")]
 layout_mode = 2
@@ -428,6 +427,7 @@ icon = SubResource("AtlasTexture_oiatc")
 expand_icon = true
 
 [node name="SettingsContainer" type="PanelContainer" parent="CanvasLayer" unique_id=622768263]
+visible = false
 z_index = 4
 anchors_preset = 15
 anchor_right = 1.0
