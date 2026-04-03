@@ -21,6 +21,7 @@ signal index_changed
 @export var position_offset_node: Control = null
 
 @export var swipe_threshold: float = 50.0
+@export var blocking_nodes: Array[Control] = []
 
 var _touch_start: Vector2 = Vector2.ZERO
 var _is_touching: bool = false
@@ -113,6 +114,10 @@ func _right():
 		emit_signal("index_changed")
 		
 func _input(event: InputEvent) -> void:
+	for node in blocking_nodes:
+		if node.visible:
+			return
+	
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			_touch_start = event.position

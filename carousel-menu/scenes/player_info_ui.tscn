@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://whrxgysumu5l" path="res://scripts/ui/player_profile/PlayerHUD.gd" id="1_c5s8f"]
 [ext_resource type="Texture2D" uid="uid://mibdmg1hvpgj" path="res://assets/game_images_sprites.png" id="2_c0l4p"]
-[ext_resource type="PackedScene" uid="uid://dlko6dpnk7hvd" path="res://scenes/interface/profile/coin/coin_stats.tscn" id="2_c5s8f"]
-[ext_resource type="PackedScene" uid="uid://ckubgbxcaaimg" path="res://scenes/interface/profile/gem/gem_stats.tscn" id="3_c0l4p"]
-[ext_resource type="PackedScene" uid="uid://b6wrxm6fy2vjs" path="res://scenes/interface/profile/level/level_stats.tscn" id="4_gw344"]
+[ext_resource type="PackedScene" uid="uid://dlko6dpnk7hvd" path="res://scenes/ui/profile/coin/coin_stats.tscn" id="2_c5s8f"]
+[ext_resource type="PackedScene" uid="uid://ckubgbxcaaimg" path="res://scenes/ui/profile/gem/gem_stats.tscn" id="3_c0l4p"]
+[ext_resource type="PackedScene" uid="uid://b6wrxm6fy2vjs" path="res://scenes/ui/profile/level/level_stats.tscn" id="4_gw344"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5bs3"]
 

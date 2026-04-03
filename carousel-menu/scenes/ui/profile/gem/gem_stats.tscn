@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckubgbxcaaimg"]
 
-[ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/interface/profile/stats.tscn" id="1_csxyn"]
+[ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/ui/profile/stats.tscn" id="1_csxyn"]
 [ext_resource type="Script" uid="uid://colqvy3tip6a6" path="res://scripts/ui/stats/gem_stats.gd" id="2_1ty27"]
 [ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="2_csxyn"]
 

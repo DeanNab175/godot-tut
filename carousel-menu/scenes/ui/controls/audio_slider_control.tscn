@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://byrej1lfjjkwr"]
+
+[ext_resource type="Theme" uid="uid://sjvf4jjtlfry" path="res://themes/slider_theme.tres" id="1_03h1l"]
+[ext_resource type="Script" uid="uid://7dxi4bx7a04t" path="res://scripts/ui/controls/audio_slider_control.gd" id="2_s2r4r"]
+
+[node name="AudioSliderControl" type="Control" unique_id=1303549557]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_top = -10.0
+offset_right = 350.0
+offset_bottom = 10.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("2_s2r4r")
+
+[node name="AudioSlider" type="HSlider" parent="." unique_id=1897753284]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -21.0
+offset_right = 364.0
+offset_bottom = 21.0
+grow_vertical = 2
+theme = ExtResource("1_03h1l")
+max_value = 1.0
+step = 0.05
+value = 1.0
+ticks_position = 3

@@ -1,6 +1,6 @@
 extends Node2D
 
-const RoomCard = preload("res://scenes/interface/room_card/room_card.tscn")
+const RoomCard = preload("uid://6eacqhr03tc")
 
 # Point directly to the Control inside CarouselContainer
 @onready var carousel_container: CarouselContainer = %CarouselContainer
@@ -9,10 +9,9 @@ const RoomCard = preload("res://scenes/interface/room_card/room_card.tscn")
 @onready var next_button: Button = $CanvasLayer/MainControl/NextButton
 @onready var exit_button: Button = $CanvasLayer/MainControl/MarginContainer/FooterContainer/ExitButton
 @onready var settings_button: Button = $CanvasLayer/MainControl/MarginContainer/FooterContainer/SettingsButton
-@onready var settings_back_button: Button = $CanvasLayer/SettingsContainer/VBoxContainer/SettingsHeaderContainer/MarginContainer/SettingsBackButton
 
 @onready var main_control: Control = $CanvasLayer/MainControl
-@onready var settings_container: PanelContainer = $CanvasLayer/SettingsContainer
+@onready var settings_page: Control = $CanvasLayer/SettingsPage
 
 func _ready() -> void:
 	_populate_cards()
@@ -20,9 +19,11 @@ func _ready() -> void:
 	next_button.pressed.connect(_on_next_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)
-	settings_back_button.pressed.connect(_on_settings_back_button_pressed)
-	main_control.visible = true
-	settings_container.visible = false
+	
+	# Settings Page
+	settings_page.back_pressed.connect(_on_settings_back_button_pressed)
+	_hide_settings_page()
+	
 	carousel_container.index_changed.connect(_update_buttons)
 	_update_buttons()
 
@@ -90,12 +91,20 @@ func _on_next_button_pressed() -> void:
 	_update_buttons()
 
 func _on_settings_button_pressed() -> void:
-	main_control.visible = false
-	settings_container.visible = true
+	_show_settings_page()
 	
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 	
 func _on_settings_back_button_pressed() -> void:
-	main_control.visible = true
-	settings_container.visible = false
+	_hide_settings_page()
+
+func _show_settings_page() -> void:
+	settings_page.visible = true
+	settings_page.z_index = 9
+	settings_page.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+func _hide_settings_page() -> void:
+	settings_page.visible = false
+	settings_page.z_index = -1
+	settings_page.mouse_filter = Control.MOUSE_FILTER_IGNORE

@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://cqwuv4phnl5el"]
+
+[ext_resource type="Script" uid="uid://cyr1q57e1l2oe" path="res://scripts/ui/settings/settings_page.gd" id="1_tprc2"]
+[ext_resource type="FontFile" uid="uid://lgj6ao4a4yn5" path="res://assets/fonts/LilitaOne-Regular.ttf" id="1_yfbvs"]
+[ext_resource type="FontFile" uid="uid://b6dqmhqvn7x82" path="res://assets/fonts/Jua-Regular.ttf" id="2_tprc2"]
+[ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="3_8e1t8"]
+[ext_resource type="PackedScene" uid="uid://byrej1lfjjkwr" path="res://scenes/ui/controls/audio_slider_control.tscn" id="3_mbarc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ifr"]
+bg_color = Color(0, 0.7647059, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kglpn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqfar"]
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ll8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2ifr"]
+atlas = ExtResource("3_8e1t8")
+region = Rect2(1678, 303, 202, 202)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1341r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kglpn"]
+atlas = ExtResource("3_8e1t8")
+region = Rect2(14, 592, 227, 185)
+
+[node name="SettingsPage" type="Control" unique_id=1432373202]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tprc2")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1453738457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7490196)
+
+[node name="SettingsPanel" type="PanelContainer" parent="." unique_id=451776827]
+custom_minimum_size = Vector2(1140, 805)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -402.5
+offset_right = 570.0
+offset_bottom = 402.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_x2ifr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel" unique_id=2138428949]
+layout_mode = 2
+
+[node name="SettingsHeaderContainer" type="PanelContainer" parent="SettingsPanel/VBoxContainer" unique_id=1031402441]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kglpn")
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel/VBoxContainer/SettingsHeaderContainer" unique_id=238249731]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="SettingsBackButton" type="Button" parent="SettingsPanel/VBoxContainer/SettingsHeaderContainer/MarginContainer" unique_id=1809051592]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqfar")
+text = "Back"
+
+[node name="Label" type="Label" parent="SettingsPanel/VBoxContainer/SettingsHeaderContainer/MarginContainer" unique_id=100017381]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.14509805)
+theme_override_colors/font_outline_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_yfbvs")
+theme_override_font_sizes/font_size = 54
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel/VBoxContainer" unique_id=525654361]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_top = 40
+
+[node name="SettingsOptionsContainer" type="PanelContainer" parent="SettingsPanel/VBoxContainer" unique_id=587489806]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2ll8y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer" unique_id=2004571646]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="MusicContainer" type="HBoxContainer" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer" unique_id=609827045]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 140
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/MusicContainer" unique_id=1332207446]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/MusicContainer/HBoxContainer" unique_id=414206741]
+layout_mode = 2
+texture = SubResource("AtlasTexture_x2ifr")
+expand_mode = 3
+
+[node name="MusicLabel" type="Label" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/MusicContainer/HBoxContainer" unique_id=710971147]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_fonts/font = ExtResource("2_tprc2")
+theme_override_font_sizes/font_size = 40
+text = "Music"
+
+[node name="MusicSliderPanel" type="PanelContainer" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/MusicContainer" unique_id=960057077]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1341r")
+
+[node name="AudioSliderControl" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/MusicContainer/MusicSliderPanel" unique_id=1303549557 instance=ExtResource("3_mbarc")]
+layout_mode = 2
+size_flags_vertical = 1
+audio_bus_name = "Music"
+
+[node name="SFXContainer" type="HBoxContainer" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer" unique_id=1428488861]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/SFXContainer" unique_id=54960347]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/SFXContainer/HBoxContainer" unique_id=1278466425]
+layout_mode = 2
+texture = SubResource("AtlasTexture_kglpn")
+expand_mode = 3
+
+[node name="SFXLabel" type="Label" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/SFXContainer/HBoxContainer" unique_id=1581762454]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+theme_override_fonts/font = ExtResource("2_tprc2")
+theme_override_font_sizes/font_size = 40
+text = "SFX"
+
+[node name="SFXSliderPanel" type="PanelContainer" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/SFXContainer" unique_id=378819108]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1341r")
+
+[node name="AudioSliderControl" parent="SettingsPanel/VBoxContainer/SettingsOptionsContainer/VBoxContainer/SFXContainer/SFXSliderPanel" unique_id=2064168060 instance=ExtResource("3_mbarc")]
+layout_mode = 2
+size_flags_vertical = 1
+audio_bus_name = "SFX"

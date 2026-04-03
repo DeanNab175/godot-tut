@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlko6dpnk7hvd"]
 
-[ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/interface/profile/stats.tscn" id="1_xeche"]
+[ext_resource type="PackedScene" uid="uid://ds3ry5kmsp61w" path="res://scenes/ui/profile/stats.tscn" id="1_xeche"]
 [ext_resource type="Script" uid="uid://c8cuicrvvhek0" path="res://scripts/ui/stats/coin_stats.gd" id="2_mcrvq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsbsn"]
