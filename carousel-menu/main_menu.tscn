@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bbj3drjga1hig" path="res://scenes/player_info_ui.tscn" id="1_7vrkn"]
 [ext_resource type="Script" uid="uid://r32wixd2wt1m" path="res://main_menu.gd" id="1_dy7ct"]
+[ext_resource type="AudioStream" uid="uid://dnexy3v3ximl0" path="res://assets/audio/Ma_Originals_Heartbeatdry_120.wav" id="2_0o4t1"]
 [ext_resource type="Theme" uid="uid://jrw0moghhibg" path="res://themes/kavoon_label_theme.tres" id="2_fu7sn"]
 [ext_resource type="PackedScene" uid="uid://cp77u6m2ifcgi" path="res://scenes/ui/buy_coins/buy_coins.tscn" id="3_jix8l"]
 [ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scenes/carousel_container.gd" id="4_8qtwp"]
@@ -147,7 +148,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.90588236, 0.8156863, 1)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=206446725]
+[node name="SFX" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=955134766]
+stream = ExtResource("2_0o4t1")
+autoplay = true
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=206446725]
 stream = ExtResource("9_dy7ct")
 autoplay = true
 bus = &"Music"
