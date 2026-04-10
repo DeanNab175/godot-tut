@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://byv5shxd7l6hc"]
+
+[ext_resource type="Script" uid="uid://unptarhen4vt" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c4btexnjlews0" path="res://ui/main_ui.gd" id="2_0xm2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.8980392, 0.015686275, 0.30588236, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.4298427, 0.6822137, 0.2086986, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.48230523, 0.37731668, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(1.347661e-06, 0.634955, 0.96089154, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.96764976, 0.30986682, 0.106884114, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Main" type="Node2D" unique_id=30133251]
+script = ExtResource("1_ig7tw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1786129659]
+script = ExtResource("2_0xm2m")
+
+[node name="QuitButton" type="Button" parent="CanvasLayer" unique_id=963673376]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -143.0
+offset_top = 39.0
+offset_right = -54.5
+offset_bottom = 93.0
+grow_horizontal = 0
+text = "Exit"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=344387855]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -93.75
+offset_right = 134.5
+offset_bottom = 93.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="IPInput" type="LineEdit" parent="CanvasLayer/VBoxContainer" unique_id=2127832929]
+layout_mode = 2
+placeholder_text = "Enter IP Address"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=710176833]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="StartServer" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=44403445]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+text = "Start Server"
+
+[node name="StartClient" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=182887417]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+text = "Start Client"
+
+[node name="JoinButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=227142948]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+text = "Join Game"
+
+[node name="FindMatch" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=606208287]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yge")
+text = "Find Match"
+
+[node name="CancelMatch" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=67141534]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Cancel Match"
+
+[node name="StatusLabel" type="TextEdit" parent="CanvasLayer/VBoxContainer" unique_id=161717340]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Status
+"
+editable = false
+scroll_fit_content_height = true
+scroll_fit_content_width = true
