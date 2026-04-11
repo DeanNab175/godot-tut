@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://d3y330jbd8sey"]
 
-[ext_resource type="PackedScene" uid="uid://bbj3drjga1hig" path="res://scenes/player_info_ui.tscn" id="1_7vrkn"]
-[ext_resource type="Script" uid="uid://r32wixd2wt1m" path="res://main_menu.gd" id="1_dy7ct"]
-[ext_resource type="AudioStream" uid="uid://dnexy3v3ximl0" path="res://assets/audio/Ma_Originals_Heartbeatdry_120.wav" id="2_0o4t1"]
-[ext_resource type="Theme" uid="uid://jrw0moghhibg" path="res://themes/kavoon_label_theme.tres" id="2_fu7sn"]
-[ext_resource type="PackedScene" uid="uid://cp77u6m2ifcgi" path="res://scenes/ui/buy_coins/buy_coins.tscn" id="3_jix8l"]
-[ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scenes/carousel_container.gd" id="4_8qtwp"]
-[ext_resource type="PackedScene" uid="uid://bic18q8iflcns" path="res://scenes/ui/options_button/option_button.tscn" id="4_qe12f"]
-[ext_resource type="PackedScene" uid="uid://cqwuv4phnl5el" path="res://scenes/ui/settings/settings_page.tscn" id="9_0o4t1"]
-[ext_resource type="AudioStream" uid="uid://d4dxo3dqm5i78" path="res://assets/audio/Jammin Bread - Casa Rosa's Tulum Vibes.mp3" id="9_dy7ct"]
-[ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="10_0o4t1"]
+[ext_resource type="Script" uid="uid://r32wixd2wt1m" path="res://scripts/ui/main_menu/main_menu.gd" id="1_chxti"]
+[ext_resource type="AudioStream" uid="uid://dnexy3v3ximl0" path="res://assets/audio/Ma_Originals_Heartbeatdry_120.wav" id="2_2pxis"]
+[ext_resource type="AudioStream" uid="uid://d4dxo3dqm5i78" path="res://assets/audio/Jammin Bread - Casa Rosa's Tulum Vibes.mp3" id="3_jo8o5"]
+[ext_resource type="PackedScene" uid="uid://bbj3drjga1hig" path="res://scenes/ui/profile/player_info_ui.tscn" id="4_ataax"]
+[ext_resource type="Theme" uid="uid://jrw0moghhibg" path="res://themes/kavoon_label_theme.tres" id="5_x31oe"]
+[ext_resource type="PackedScene" uid="uid://cp77u6m2ifcgi" path="res://scenes/ui/buy_coins/buy_coins.tscn" id="6_idvnp"]
+[ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scripts/ui/carousel/carousel_container.gd" id="7_fnkq8"]
+[ext_resource type="PackedScene" uid="uid://bic18q8iflcns" path="res://scenes/ui/options_button/option_button.tscn" id="8_8i8ns"]
+[ext_resource type="Texture2D" uid="uid://rfcuyqn834h0" path="res://assets/game_sprites.svg" id="9_wv6bh"]
+[ext_resource type="PackedScene" uid="uid://cqwuv4phnl5el" path="res://scenes/ui/settings/settings_page.tscn" id="10_g6wm5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
 
@@ -24,19 +24,19 @@ bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
 bg_color = Color(0.9882353, 0.43137255, 0.1254902, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qe12f"]
-atlas = ExtResource("10_0o4t1")
+atlas = ExtResource("9_wv6bh")
 region = Rect2(824, 280, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qtwp"]
-atlas = ExtResource("10_0o4t1")
+atlas = ExtResource("9_wv6bh")
 region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dy7ct"]
-atlas = ExtResource("10_0o4t1")
+atlas = ExtResource("9_wv6bh")
 region = Rect2(276, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0o4t1"]
-atlas = ExtResource("10_0o4t1")
+atlas = ExtResource("9_wv6bh")
 region = Rect2(1672, 21, 226, 217)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
@@ -84,7 +84,7 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w44g7"]
-atlas = ExtResource("10_0o4t1")
+atlas = ExtResource("9_wv6bh")
 region = Rect2(1412, 299, 191, 212)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w44g7"]
@@ -132,11 +132,11 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oiatc"]
-atlas = ExtResource("10_0o4t1")
+atlas = ExtResource("9_wv6bh")
 region = Rect2(1412, 21, 191, 212)
 
 [node name="GameMainMenu" type="Node2D" unique_id=1131247496]
-script = ExtResource("1_dy7ct")
+script = ExtResource("1_chxti")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=96111223]
 
@@ -149,12 +149,12 @@ grow_vertical = 2
 color = Color(1, 0.90588236, 0.8156863, 1)
 
 [node name="SFX" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=955134766]
-stream = ExtResource("2_0o4t1")
+stream = ExtResource("2_2pxis")
 autoplay = true
 bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=206446725]
-stream = ExtResource("9_dy7ct")
+stream = ExtResource("3_jo8o5")
 autoplay = true
 bus = &"Music"
 
@@ -189,14 +189,14 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_glbon")
 
-[node name="Profile" parent="CanvasLayer/MainControl/MarginContainer/HeaderFrame/ProfileFrame" unique_id=26750104 instance=ExtResource("1_7vrkn")]
+[node name="Profile" parent="CanvasLayer/MainControl/MarginContainer/HeaderFrame/ProfileFrame" unique_id=26750104 instance=ExtResource("4_ataax")]
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 
 [node name="GameTitle" type="Label" parent="CanvasLayer/MainControl/MarginContainer/HeaderFrame" unique_id=1606964695]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("2_fu7sn")
+theme = ExtResource("5_x31oe")
 theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 theme_override_colors/font_shadow_color = Color(0.19607843, 0.19607843, 0.19607843, 0.18431373)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -206,7 +206,7 @@ theme_override_font_sizes/font_size = 55
 text = "Slot Gather"
 uppercase = true
 
-[node name="BuyCoinsFrame" parent="CanvasLayer/MainControl/MarginContainer/HeaderFrame" unique_id=1047913136 instance=ExtResource("3_jix8l")]
+[node name="BuyCoinsFrame" parent="CanvasLayer/MainControl/MarginContainer/HeaderFrame" unique_id=1047913136 instance=ExtResource("6_idvnp")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
@@ -219,7 +219,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_qe12f")
 
 [node name="CarouselContainer" type="Node2D" parent="CanvasLayer/MainControl/MarginContainer/CarouselFrame" unique_id=1413124047 node_paths=PackedStringArray("position_offset_node", "blocking_nodes")]
 unique_name_in_owner = true
-script = ExtResource("4_8qtwp")
+script = ExtResource("7_fnkq8")
 wraparound_radius = 550.0
 wraparound_height = 10.0
 selected_index = 1
@@ -354,25 +354,25 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 35
 
-[node name="NewGameButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=995603270 instance=ExtResource("4_qe12f")]
+[node name="NewGameButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=995603270 instance=ExtResource("8_8i8ns")]
 layout_mode = 2
 
-[node name="SettingsButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=388441396 instance=ExtResource("4_qe12f")]
+[node name="SettingsButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=388441396 instance=ExtResource("8_8i8ns")]
 layout_mode = 2
 text = "Settings"
 icon = SubResource("AtlasTexture_qe12f")
 
-[node name="FriendsButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=564784760 instance=ExtResource("4_qe12f")]
+[node name="FriendsButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=564784760 instance=ExtResource("8_8i8ns")]
 layout_mode = 2
 text = "Friends"
 icon = SubResource("AtlasTexture_8qtwp")
 
-[node name="HelpButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=2102599588 instance=ExtResource("4_qe12f")]
+[node name="HelpButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=2102599588 instance=ExtResource("8_8i8ns")]
 layout_mode = 2
 text = "Help"
 icon = SubResource("AtlasTexture_dy7ct")
 
-[node name="ExitButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=533559334 instance=ExtResource("4_qe12f")]
+[node name="ExitButton" parent="CanvasLayer/MainControl/MarginContainer/FooterContainer" unique_id=533559334 instance=ExtResource("8_8i8ns")]
 layout_mode = 2
 text = "Exit"
 icon = SubResource("AtlasTexture_0o4t1")
@@ -415,6 +415,6 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_8u0te")
 icon = SubResource("AtlasTexture_oiatc")
 expand_icon = true
 
-[node name="SettingsPage" parent="CanvasLayer" unique_id=1432373202 instance=ExtResource("9_0o4t1")]
+[node name="SettingsPage" parent="CanvasLayer" unique_id=1432373202 instance=ExtResource("10_g6wm5")]
 visible = false
 z_index = 3

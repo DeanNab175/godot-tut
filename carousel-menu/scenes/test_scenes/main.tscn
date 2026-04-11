@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdfi7us6lombh"]
 
-[ext_resource type="PackedScene" uid="uid://cmthpksltx4q2" path="res://scenes/carousel_menu.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cmthpksltx4q2" path="res://scenes/test_scenes/carousel_menu.tscn" id="1_o5qli"]
 
 [node name="Node2D" type="Node2D" unique_id=570251953]
 

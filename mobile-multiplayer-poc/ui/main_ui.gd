@@ -11,6 +11,7 @@ extends Node
 @onready var quit_btn: Button = $QuitButton
 @onready var join_button: Button = $VBoxContainer/JoinButton
 @onready var ip_input: LineEdit = $VBoxContainer/IPInput
+@onready var quit_match_btn: Button = $VBoxContainer/QuitMatch
 
 
 # ---------------------------------------------------------------
@@ -20,6 +21,7 @@ func _ready() -> void:
 	_wire_buttons()
 	_wire_network_signals()
 	_set_matchmaking_ui_visible(false)
+	quit_match_btn.visible = false
 	#_log("Choose mode: Server or Client")
 	if NetworkManager.is_server_mode:
 		# Server auto-started — show server-only UI
@@ -50,6 +52,7 @@ func _wire_buttons() -> void:
 	cancel_match_btn.pressed.connect(_on_cancel_match)
 	quit_btn.pressed.connect(_on_quit)
 	join_button.pressed.connect(_on_join_pressed)
+	quit_match_btn.pressed.connect(_on_quit_match)
 
 
 func _wire_network_signals() -> void:
@@ -104,6 +107,10 @@ func _on_quit() -> void:
 	await get_tree().create_timer(0.2).timeout
 	get_tree().quit()
 
+func _on_quit_match() -> void:
+	_log("🚪 Leaving match...")
+	NetworkManager.quit_match()
+	_set_in_game_ui(false)   # back to lobby UI
 
 func _on_join_pressed() -> void:
 	var ip := ip_input.text.strip_edges()
@@ -136,8 +143,9 @@ func _on_player_disconnected(id: int) -> void:
 
 func _on_match_found(room_id: int) -> void:
 	_log("🎉 Match found! Room: %d — Starting game..." % room_id)
-	find_match_btn.disabled = false
-	cancel_match_btn.visible = false
+	#find_match_btn.disabled = false
+	#cancel_match_btn.visible = false
+	_set_in_game_ui(true)
 	# TODO: transition to game scene
 	# get_tree().change_scene_to_file("res://game/GameBoard.tscn")
 
@@ -152,6 +160,7 @@ func _on_matchmaking_status(status: String) -> void:
 func _on_opponent_left() -> void:
 	_log("⚠️ Opponent disconnected. Returning to lobby...")
 	_set_matchmaking_ui_visible(true)
+	_set_in_game_ui(false)
 
 
 func _on_room_created(room_id: int, players: Array) -> void:
@@ -175,7 +184,16 @@ func _unlock_mode_buttons() -> void:
 	start_server_btn.disabled = false
 	start_client_btn.disabled = false
 
+func _set_in_game_ui(in_game: bool) -> void:
+	# In-game: show Quit Match only
+	quit_match_btn.visible = in_game
+
+	# Lobby: show Find Match, hide Cancel
+	find_match_btn.visible = not in_game
+	find_match_btn.disabled = false
+	cancel_match_btn.visible = false
 
 func _set_matchmaking_ui_visible(visible: bool) -> void:
 	find_match_btn.visible = visible
 	cancel_match_btn.visible = false   # always start hidden
+	quit_match_btn.visible = false

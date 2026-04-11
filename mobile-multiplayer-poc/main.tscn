@@ -47,6 +47,17 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.8901961, 0.5254902, 0.21568628, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
 content_margin_left = 12.0
 content_margin_top = 8.0
@@ -118,6 +129,11 @@ text = "Join Game"
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_h2yge")
 text = "Find Match"
+
+[node name="QuitMatch" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=69286409]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mycd")
+text = "Quit Match"
 
 [node name="CancelMatch" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=67141534]
 layout_mode = 2

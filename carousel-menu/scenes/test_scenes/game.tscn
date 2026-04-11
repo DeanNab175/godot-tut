@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dg7fo2rakulc4"]
 
-[ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scenes/carousel_container.gd" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://ht2o2ctyhu2m" path="res://scenes/game.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scripts/ui/carousel/carousel_container.gd" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://ht2o2ctyhu2m" path="res://scenes/test_scenes/game.gd" id="1_yqjtg"]
 [ext_resource type="Theme" uid="uid://4wbswqo18752" path="res://themes/stats_label_theme.tres" id="3_lnu2h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqjtg"]
@@ -29,13 +29,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -200.0
+offset_right = -200.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="Panel" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=1946071131]
-z_index = 1
+z_index = 6
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -43,9 +45,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
 offset_top = -250.0
-offset_right = 200.0
+offset_right = 400.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -71,7 +72,7 @@ text = "Panel 1"
 
 [node name="Panel2" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=24241921]
 modulate = Color(1, 1, 1, 0.65)
-z_index = -1
+z_index = 5
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -79,9 +80,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 220.0
+offset_left = 420.0
 offset_top = -250.0
-offset_right = 620.0
+offset_right = 820.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -108,7 +109,7 @@ text = "Panel 2"
 
 [node name="Panel3" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=280957445]
 modulate = Color(1, 1, 1, 0.3)
-z_index = -2
+z_index = 4
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -116,9 +117,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 640.0
+offset_left = 840.0
 offset_top = -250.0
-offset_right = 1040.0
+offset_right = 1240.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -144,8 +145,8 @@ theme_override_font_sizes/font_size = 60
 text = "Panel 3"
 
 [node name="Panel4" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=1552948984]
-modulate = Color(1, 1, 1, 4e-45)
-z_index = -3
+modulate = Color(1, 1, 1, 1e-45)
+z_index = 3
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -153,9 +154,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1060.0
+offset_left = 1260.0
 offset_top = -250.0
-offset_right = 1460.0
+offset_right = 1660.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -181,8 +182,8 @@ theme_override_font_sizes/font_size = 60
 text = "Panel 4"
 
 [node name="Panel5" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=1408193904]
-modulate = Color(1, 1, 1, 4e-45)
-z_index = -4
+modulate = Color(1, 1, 1, 1e-45)
+z_index = 2
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -190,13 +191,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1480.0
+offset_left = 1680.0
 offset_top = -250.0
-offset_right = 1880.0
+offset_right = 2080.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.10000002, 0.10000002)
+scale = Vector2(0.10000001, 0.10000001)
 pivot_offset = Vector2(200, 250)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 
@@ -218,8 +219,8 @@ theme_override_font_sizes/font_size = 60
 text = "Panel 5"
 
 [node name="Panel6" type="Panel" parent="CanvasLayer/CarouselContainer/Control" unique_id=485460480]
-modulate = Color(1, 1, 1, 4e-45)
-z_index = -5
+modulate = Color(1, 1, 1, 1e-45)
+z_index = 1
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -227,13 +228,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1900.0
+offset_left = 2100.0
 offset_top = -250.0
-offset_right = 2300.0
+offset_right = 2500.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.10000002, 0.10000002)
+scale = Vector2(0.10000001, 0.10000001)
 pivot_offset = Vector2(200, 250)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 

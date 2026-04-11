@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmthpksltx4q2"]
 
-[ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scenes/carousel_container.gd" id="1_ft87r"]
+[ext_resource type="Script" uid="uid://dy6jj7fm23i3h" path="res://scripts/ui/carousel/carousel_container.gd" id="1_ft87r"]
 
 [node name="CarouselMenu" type="Node2D" unique_id=672640881]
 
@@ -15,32 +15,31 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -96.63881
-offset_right = -96.63881
+offset_left = -245.0
+offset_right = -245.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.41, 2.41)
 
 [node name="Panel" type="Panel" parent="CarouselContainer/Control" unique_id=1306060617]
 modulate = Color(1, 1, 1, 0.65)
-z_index = -1
+z_index = 5
 layout_mode = 0
-offset_left = -148.36122
-offset_top = -107.88381
-offset_right = 1.6387787
-offset_bottom = 92.11619
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(75, 100)
 
 [node name="Panel2" type="Panel" parent="CarouselContainer/Control" unique_id=1525980835]
-z_index = 1
+z_index = 6
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.638779
+offset_left = 170.0
 offset_top = -100.0
-offset_right = 171.63878
+offset_right = 320.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -48,44 +47,44 @@ pivot_offset = Vector2(75, 100)
 
 [node name="Panel3" type="Panel" parent="CarouselContainer/Control" unique_id=1853402090]
 modulate = Color(1, 1, 1, 0.65)
-z_index = -1
+z_index = 5
 layout_mode = 0
-offset_left = 191.63878
+offset_left = 340.0
 offset_top = -100.0
-offset_right = 341.6388
+offset_right = 490.0
 offset_bottom = 100.0
 scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(75.00001, 100)
+pivot_offset = Vector2(75, 100)
 
 [node name="Panel4" type="Panel" parent="CarouselContainer/Control" unique_id=1351207749]
 modulate = Color(1, 1, 1, 0.3)
-z_index = -2
+z_index = 4
 layout_mode = 0
-offset_left = 361.6388
+offset_left = 510.0
 offset_top = -100.0
-offset_right = 511.63882
+offset_right = 660.0
 offset_bottom = 100.0
 scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(75.000015, 100)
+pivot_offset = Vector2(75, 100)
 
 [node name="Panel5" type="Panel" parent="CarouselContainer/Control" unique_id=1677400916]
 modulate = Color(1, 1, 1, 0)
-z_index = -3
+z_index = 3
 layout_mode = 0
-offset_left = 531.6388
+offset_left = 680.0
 offset_top = -100.0
-offset_right = 681.6388
+offset_right = 830.0
 offset_bottom = 100.0
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(75, 100)
 
 [node name="Panel6" type="Panel" parent="CarouselContainer/Control" unique_id=1276215741]
 modulate = Color(1, 1, 1, 0)
-z_index = -4
+z_index = 2
 layout_mode = 0
-offset_left = 701.6388
+offset_left = 850.0
 offset_top = -100.0
-offset_right = 851.6388
+offset_right = 1000.0
 offset_bottom = 100.0
 scale = Vector2(0.1, 0.1)
 pivot_offset = Vector2(75, 100)
